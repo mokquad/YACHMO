@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iArchive 2 | DemoLoop Tutorial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5e6cc, #8b5bb7);
+            min-height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .content-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 60%;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease forwards;
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            text-align: center;
+            color: #8b5bb7;
+            font-weight: 600;
+        }
+        ol {
+            margin: 20px 0;
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        strong {
+            font-weight: 600;
+            color: #8b5bb7;
+        }
+        
+        .warning {
+            color: #d9534f;
+            font-weight: 600;
+            margin: 15px 0;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: #8b5bb7;
+            text-decoration: none;
+            font-weight: 600;
+            background-color: rgba(245, 230, 204, 0.8);
+            padding: 10px 15px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .back-arrow:hover {
+            background-color: #8b5bb7;
+            color: #f5e6cc;
+        }
+@media screen and (max-width: 480px) {
+    body {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .body {
+        padding: 10px;
+    }
+
+    .content-box {
+        width: 90%;
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    .guide-list {
+        font-size: 0.95rem;
+    }
+
+    .back-arrow {
+        font-size: 18px;
+        padding: 6px 10px;
+        top: unset;
+        left: unset;
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .warning {
+        margin-top: 0;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-arrow">&larr; Back</a>
+    
+    <div class="content-box">
+	<center>
+        <p class="warning">This will erase all data on the device, and you might not be able to unenroll.</p>
+	</center>	
+    </div>
+    
+    <div class="content-box">
+        <h1>How to get to the Demo Mode</h1>
+        <ol>
+            <li>Go to <a href="https://demounit.apple.com" class="link" target="_blank">demounit.apple.com</a> (on a other device, not the one you want to install demo mode on).</li>
+            <li>Sign in with your Apple ID.</li>
+            <li>Install the app.</li>
+            <li>Choose a random Apple Store (doesn't matter).</li>
+            <li>Tap "Enroll a new device".</li>
+            <li>Click "Manual entry".</li>
+            <li>Enter the serial number of your device (the device you're trying to put demo mode on).</li>
+            <li>Click "Submit".</li>
+            <li>Click "Confirm", then it will show you a code. Write down/save it for later.</li>
+            <li>Reset all content and settings on the device you want to install demo mode on (not the device with the DemoUnit app).</li>
+            <li>Continue setup until you're asked for a code. Enter the code you got at step 9.</li>
+            <li>Wait until the demo update finishes.</li>
+            <li><strong>ENJOY!</strong></li>
+        </ol>
+    </div>
+
+    <div class="content-box">
+        <h1>How to get device out of Demo Mode</h1>
+        <ol>
+            <li>Go to the admin menu (three fingers in the corner - picture link at the bottom).</li>
+            <li>Press "Unenroll", it will work fine!</li>
+            <li>If the store is enrolled in the Demo Device Lock Theft Deterrence Program, you have to use the web app, which you don’t have the password for, so you can’t unenroll it.</li>
+            <li>Just put your three fingers in the areas there, and then choose reset.</li>
+        </ol>
+    </div>
+
+    <div class="content-box">
+        <h1>How to get to the Retail Demo Mode on Apple TV</h1>
+        <ol>
+            <li>Open "Settings".</li>
+            <li>Click "General" and highlight "About".</li>
+            <li>Press the "Play/Pause" button 4 times.</li>
+            <li>Click the "Demo Mode" panel and select "Apple Store" or "Channel" to set the retail demo mode type.</li>
+            <li>Click "Apply Changes" to enable Demo mode.</li>
+        </ol>
+        <p><strong>Note:</strong> To turn off demo mode, simply follow steps 1-4 and choose the "Off" option.</p>
+        <p><strong>In Demo Mode:</strong> Many settings are greyed out and inaccessible. Demo Mode allows you to:</p>
+        <ul>
+            <li>Restrict video playback to a specific duration.</li>
+            <li>Lock down settings.</li>
+            <li>Establish a custom screensaver asset URL. This URL points to an Apple-created screensaver that downloads in the background and plays after applying changes. The screensaver will repeatedly loop while the Apple TV is in demo mode, just like you’d see at a retail store.</li>
+        </ul>
+        <p>You could even, in theory, provide your own custom URL to play your own custom screensavers.</p>
+    </div>
+</body>
+</html>

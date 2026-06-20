@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iArchive 2 | Other</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-y: auto;
+        }
+
+        .links-body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background: linear-gradient(135deg, #f5e6cc, #bb75d5);
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .links-content {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 60%;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .links-content h1 {
+            color: #8b5bb7;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .links-list {
+            margin: 20px 0;
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .links-list a {
+            color: #8b5bb7;
+            text-decoration: none;
+            font-weight: 400;
+        }
+		
+		.links-black a {
+            color: #383838;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .links-list a:hover {
+            text-decoration: underline;
+        }
+
+        .links-list li {
+            margin-bottom: 10px;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: #8b5bb7;
+            text-decoration: none;
+            font-weight: 600;
+            background-color: rgba(245, 230, 204, 0.8);
+            padding: 10px 15px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .back-arrow:hover {
+            background-color: #8b5bb7;
+            color: #f5e6cc;
+        }
+@media screen and (max-width: 480px) {
+    .links-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .links-content h1 {
+        font-size: 1.2rem;
+    }
+
+    .links-list {
+        font-size: 1rem;
+    }
+
+    .links-list li {
+        margin-bottom: 8px;
+        word-wrap: break-word;
+    }
+
+    .links-list a {
+        font-size: 0.95rem;
+    }
+
+    .back-arrow {
+        font-size: 18px;
+        padding: 6px 10px;
+        top: unset;
+        left: unset;
+        position: relative;
+        margin-bottom: 10px;
+    }
+}
+
+    </style>
+</head>
+<body class="links-body">
+
+    <a href="../index.html" class="back-arrow">&larr; Back</a>
+
+    <!-- Apple Internal Links Content -->
+    <div class="links-content">
+        <h1>Apple Internal Links</h1>
+        <ul class="links-list">
+            <li><a href="https://appleconnect.apple.com
+" target="_blank">appleconnect.apple.com
+</a></li>
+            <li><a href="https://sb.apple.com" target="_blank">sb.apple.com</a></li>
+            <li><a href="https://sb-install.apple.com" target="_blank">sb-install.apple.com</a></li>
+            <li><a href="https://wellness.apple.com" target="_blank">wellness.apple.com</a></li>
+            <li><a href="https://radar.apple.com
+" target="_blank">radar.apple.com
+</a></li>
+            <li><a href="https://tatsu.apple.com
+" target="_blank">tatsu.apple.com
+</a></li>
+            <li><a href="https://food.apple.com" target="_blank">food.apple.com</a></li>
+            <li><a href="https://kickstart.apple.com" target="_blank">kickstart.apple.com</a></li>
+            <li><a href="https://train.apple.com
+" target="_blank">train.apple.com
+</a></li>
+            <li><a href="https://retailme.apple.com
+" target="_blank">retailme.apple.com
+</a></li>
+            <li><a href="https://retailfeedback.apple.com" target="_blank">retailfeedback.apple.com</a></li>
+            <li><a href="https://internal.apple.com" target="_blank">internal.apple.com</a></li>
+            <li><a href="https://people.apple.compeople.apple.com" target="_blank">people.apple.com</a></li>
+            <li><a href="https://partner.apple.com" target="_blank">partner.apple.com</a></li>
+            <li><a href="https://partner-relay.apple.com" target="_blank">partner-relay.apple.com</a></li>
+            <li><a href="https://mypage.apple.com
+" target="_blank">mypage.apple.com
+</a></li>
+            <li><a href="https:/iosdiags.apple.com/" target="_blank">iosdiags.apple.com</a></li>
+            <li><a href="https://diagnostics.apple.com" target="_blank">diagnostics.apple.com</a></li>
+            <li><a href="https://ss.apple.com" target="_blank">ss.apple.com</a></li>
+            <li><a href="https://appleweb.apple.com" target="_blank">appleweb.apple.com</a></li>
+            <li><a href="https://hrweb.apple.com" target="_blank">hrweb.apple.com</a></li>
+            <li><a href="https://seedsales.apple.com" target="_blank">seedsales.apple.com</a></li>
+            <li><a href="https://seedsales.apple.com/install" target="_blank">seedsales.apple.com/install</a></li>
+            <li><a href="https://mydemo.apple.com" target="_blank">mydemo.apple.com</a></li>
+            <li><a href="https://onepulse.apple.com" target="_blank">onepulse.apple.com</a></li>
+            <li><a href="https://onepulse-stage.apple.com" target="_blank">onepulse-stage.apple.com</a></li>
+			<li><a href="https://op-ma.apple.com" target="_blank">op-ma.apple.com</a></li>
+            <li><a href="https://events.apple.com" target="_blank">events.apple.com</a></li>
+            <li><a href="https://events-admin.apple.com" target="_blank">events-admin.apple.com</a></li>
+            <li><a href="https://mymessage.apple.com" target="_blank">mymessage.apple.com</a></li>
+            <li><a href="https://mymessage-corp.apple.com" target="_blank">mymessage-corp.apple.com</a></li>
+            <li><a href="https://demounit.apple.com" target="_blank">demounit.apple.com</a></li>
+            <li><a href="https://demoupdate.apple.com
+" target="_blank">demoupdate.apple.com
+</a></li>
+            <li><a href="https://purplerestore.apple.com" target="_blank">purplerestore.apple.com</a></li>
+            <li><a href="https://purplerestore.apple.com/classic" target="_blank">purplerestore.apple.com/classic</a></li>
+            <li><a href="https://moo.apple.com" target="_blank">moo.apple.com</a></li>
+            <li><a href="https://commute.apple.com" target="_blank">commute.apple.com</a></li>
+            <li><a href="https://commuteapp.apple.com" target="_blank">commuteapp.apple.com</a></li>
+            <li><a href="https://gsx.apple.com" target="_blank">gsx.apple.com</a></li>
+            <li><a href="https://gsx2.apple.com" target="_blank">gsx2.apple.com</a></li>
+            <li><a href="https://diagnostics.apple.com/logout
+" target="_blank">diagnostics.apple.com/logout
+</a></li>
+            <li><a href="https://cudos.apple.com" target="_blank">cudos.apple.com</a></li>
+            <li><a href="https://salescoach.apple.com" target="_blank">salescoach.apple.com</a></li>
+            <li><a href="https://salescoach.apple.com/install" target="_blank">salescoach.apple.com/install</a></li>
+            <li><a href="https://daw.apple.com" target="_blank">daw.apple.com</a></li>
+            <li><a href="https://asw.apple.com" target="_blank">asw.apple.com</a></li>
+            <li><a href="https://gigafiles.apple.com" target="_blank">gigafiles.apple.com</a></li>
+            <li><a href="https://istweb.apple.com" target="_blank">istweb.apple.com</a></li>
+            <li><a href="https://seedadmin.apple.com" target="_blank">seedadmin.apple.com</a></li>
+            <li><a href="https://istapps-nwk.apple.com" target="_blank">istapps-nwk.apple.com</a></li>
+            <li><a href="https://ist-mobile-services.apple.com
+" target="_blank">ist-mobile-services.apple.com
+</a></li>
+            <li><a href="https://facilities.apple.com" target="_blank">facilities.apple.com</a></li>
+			<li><a href="https://welcomeforward.apple.com" target="_blank">welcomeforward.apple.com</a></li>
+            <li><a href="https://concierge.apple.com" target="_blank">concierge.apple.com</a></li>
+            <li><a href="https://concierge.apple.com/geniusbar" target="_blank">concierge.apple.com/geniusbar</a></li>
+            <li><a href="https://retail-confluence.apple.com" target="_blank">retail-confluence.apple.com</a></li>
+            <li><a href="https://sbit.apple.com" target="_blank">sbit.apple.com</a></li>
+            <li><a href="https://corpmdm.apple.com
+" target="_blank">corpmdm.apple.com
+</a></li>
+            <li><a href="https://university.apple.com" target="_blank">university.apple.com</a></li>
+            <li><a href="https://outpost.apple.com" target="_blank">outpost.apple.com</a></li>
+            <li><a href="https://columbo.apple.com" target="_blank">columbo.apple.com</a></li>
+            <li><a href="https://columbo-event.apple.com" target="_blank">columbo-event.apple.com</a></li>
+            <li><a href="https://pallete.apple.com" target="_blank">pallete.apple.com</a></li>
+            <li><a href="https://mystore.apple.com" target="_blank">mystore.apple.com</a></li>
+            <li><a href="https://meetingroom-dr.apple.com" target="_blank">meetingroom-dr.apple.com</a></li>
+            <li><a href="https://identity.apple.com" target="_blank">identity.apple.com</a></li>
+            <li><a href="https://captive.apple.com" target="_blank">captive.apple.com</a></li>
+            <li><a href="https://webcast.apple.com" target="_blank">webcast.apple.com</a></li>
+        </ul>
+    </div>
+
+    <!-- DemoLoop Links Content -->
+    <div class="links-content">
+        <h1>DemoLoop Links</h1>
+        <ul class="links-list">
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/22-apple-at-work-ipad/en_US-0-0-494.mov" target="_blank">Apple at Work iPad (US)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/38-arcade-ipad/en_AE-0-0-544.mp4" target="_blank">Arcade iPad (AE)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/38-arcade-ipad/fr_CA-0-0-548.mp4" target="_blank">Arcade iPad (FR)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/39-arcade-ipod-touch/en_AE-0-0-561.mp4" target="_blank">Arcade iPod Touch (AE)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/39-arcade-ipod-touch/fr_BE-0-0-564.mp4" target="_blank">Arcade iPod Touch (FR)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/5-music/en_CA-0-0-280.mp4" target="_blank">Music Campaign (EN)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/5-music/fr_CA-0-0-287.mp4" target="_blank">Music Campaign (FR)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/21-arcade-iphone/en_AE-0-0-478.mp4" target="_blank">Arcade iPhone (AE)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/21-arcade-iphone/fr_CA-0-0-482.mp4" target="_blank">Arcade iPhone (FR)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/20-health/en_CA-0-0-453.mp4" target="_blank">Health Campaign (EN)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/20-health/fr_CA-0-0-460.mp4" target="_blank">Health Campaign (FR)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/46-engraving/fr_CA-0-0-825.mp4" target="_blank">Engraving Campaign (FR)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/46-engraving/en_CA-0-0-821.mp4" target="_blank">Engraving Campaign (EN)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/20-health/en_CA-0-0-840.mov" target="_blank">Health Campaign (EN MOV)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/20-health/fr_CA-0-0-847.mov" target="_blank">Health Campaign (FR MOV)</a></li>
+            <li><a href="http://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/22-apple-at-work-ipad/fr_CA-0-0-497.mov" target="_blank">Apple at Work iPad (FR)</a></li>
+            <li><a href="http://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/22-apple-at-work-ipad/en_US-0-0-494.mov" target="_blank">Apple at Work iPad (EN)</a></li>
+            <li><a href="https://demosystems-assets.cdn-apple.com/DLM-CE83B875-6029-4795-83C6-782F15776047-production/campaigns/23-apple-at-work-iphone/fr_CA-0-0-512.mov" target="_blank">Apple at Work iPhone (FR)</a></li>
+        </ul>
+    </div>
+
+    <!-- App Store Links Content -->
+    <div class="links-content">
+        <h1>App Store Links</h1>
+        <ul class="links-list">
+		    <li><a href="https://apps.apple.com/us/developer/apple-inc-internal-distribution/" target="_blank">Apple Inc. Internal Distribution</a></li>
+            <li><a href="https://apps.apple.com/us/app/seed/id6449049254" target="_blank">SEED</a></li>
+            <li><a href="https://apps.apple.com/us/app/reality-composer/id1462358802" target="_blank">Reality Composer</a></li>
+            <li><a href="https://apps.apple.com/us/app/apple-research/id1463884356" target="_blank">Apple Research</a></li>
+            <li><a href="https://apps.apple.com/us/app/apple-music-for-artists/id1366467972" target="_blank">Apple Music for Artists</a></li>
+            <li><a href="https://apps.apple.com/us/app/app-store-connect/id1234793120" target="_blank">App Store Connect</a></li>
+            <li><a href="https://apps.apple.com/us/app/apple-developer/id640199958" target="_blank">Apple Developer</a></li>
+            <li><a href="https://apps.apple.com/us/app/testflight/id899247664" target="_blank">TestFlight</a></li>
+            <li><a href="https://apps.apple.com/us/app/jamf-self-service/id718509958" target="_blank">Jamf Self Service</a></li>
+            <li><a href="https://apps.apple.com/us/app/apple-configurator/id1588794674" target="_blank">Apple Configurator</a></li>
+            <li><a href="https://apps.apple.com/us/app/indoor-survey/id994269367" target="_blank">Indoor Survey</a></li>
+            <li><a href="https://apps.apple.com/us/app/classroom/id1085319084" target="_blank">Classroom</a></li>
+            <li><a href="https://apps.apple.com/us/app/siri-speech-study/id1564003829" target="_blank">Siri Speech Study</a></li>
+            <li><a href="https://apps.apple.com/us/app/find-my-certification-asst/id1532296125" target="_blank">Find My Certification Assistant</a></li>
+            <li><a href="https://apps.apple.com/us/app/car-keys-tests/id1635860023" target="_blank">Car Keys Tests</a></li>
+            <li><a href="https://apps.apple.com/us/app/magsafe-certification-asst/id1533467908" target="_blank">MagSafe Certification Assistant</a></li>
+            <li><a href="https://apps.apple.com/us/app/accessory-developer-assistant/id1635862694" target="_blank">Accessory Developer Assistant</a></li>
+            <li><a href="https://apps.apple.com/de/app/gymkit-certification-assistant/id1537439501" target="_blank">GymKit Certification Assistant</a></li>
+            <li><a href="https://apps.apple.com/us/app/apple-health-studies/id1666409057" target="_blank">Apple Health Studies</a></li>
+            <li><a href="https://apps.apple.com/us/app/apple-partner-media-review/id1559618809" target="_blank">Apple Partner Media Review</a></li>
+            <li><a href="https://apps.apple.com/us/app/connect-sso/id1666406319" target="_blank">Connect SSO</a></li>
+            <li><a href="https://apps.apple.com/us/app/caff%C3%A8-macs/id1559091199" target="_blank">Caffè Macs</a></li>
+            <li><a href="https://apps.apple.com/us/app/phantom/id1513953899" target="_blank">Phantom</a></li>
+            <li><a href="https://apps.apple.com/us/app/global-security/id1515539328" target="_blank">Global Security</a></li>
+            <li><a href="https://apps.apple.com/us/app/apple-retail-schedule/id1451534789" target="_blank">Apple Retail Schedule</a></li>
+            <li><a href="https://apps.apple.com/us/app/commute/id1506257776" target="_blank">Commute</a></li>
+        </ul>
+    </div>
+
+    <!-- DemoUnit Links Content -->
+    <div class="links-content">
+        <h1>DemoUnit Links</h1>
+        <ul class="links-list">
+            <li><a href="https://demounit.apple.com/views/com.apple.ist.acs/download" target="_blank">DemoUnit ACS</a></li>
+            <li><a href="https://demounit.apple.com/views/com.apple.ist.networkcheck/download" target="_blank">DemoUnit Network Check</a></li>
+            <li><a href="https://demounit.apple.com/views/com.apple.ist.DemoUnit-iOS/download" target="_blank">DemoUnit iOS</a></li>
+			<li><a href="https://demounit.apple.com/views/com.axinoe.iosdm.Installer/download" target="_blank">iOS DM</a></li>
+        </ul>
+    </div>
+	    <!-- FCC REPORT Content -->
+    <div class="links-content">
+        <h1>FCC Links</h1>
+        <ul class="links-list">
+            <li><a href="https://fcc.report/company/Apple-Inc" target="_blank">FCC Report Apple Inc.</a></li>
+            <li><a href="https://fcc.report/company/Apple-computer-Incorporated" target="_blank">FCC Report Apple Computer Incorporated</a></li>
+        </ul>
+    </div>
+	
+		    <!-- Other Links -->
+    <div class="links-content">
+        <h1>Other Links</h1>
+        <ul class="links-list">
+            <li><a href="http://diagnostics.apple.com/static/projects/aide/pages/main/index.html" target="_blank">Apple AIDE</a></li>
+			<li><a href="http://crl.apple.com/" target="_blank">Apple CRL</a></li>
+			<li><a href="https://www.apple.com/certificateauthority/" target="_blank">Apple PKI</a></li>
+			<li><a href="https://eservicecentral.apple.com/" target="_blank">eservicecentral</a></li>
+			<li><a href="https://channel.arvato.com/" target="_blank">Arvato</a></li>
+			<li><a href="https://www.apple.com/lae/aar/" target="_blank">Apple Channel Programs</a></li>
+        </ul>
+    </div>
+	
+	<!-- Develoment files / firmwares -->
+    <div class="links-content">
+        <h1>Develoment files, apps and firmwares</h1>
+        <ul class="links-list">
+            <li><a href="other/sourcecodes.rar" target="_blank">iOS 9 iBoot source code</a></li>
+			<li><a href="other/ramdisktools.zip" target="_blank">Ramdisk Tools (32 bit)</a></li>
+			<li><a href="other/cfwtools.zip" target="_blank">CFW Tools (32 bit)</a></li>
+			<li><a href="https://github.com/cfw-project/asr_patcher" target="_blank">asr_patcher (32 bit)</a></li>
+			<li><a href="https://github.com/exploit3dguy/asr64_patcher" target="_blank">asr_patcher (64 bit)</a></li>
+			<li><a href="https://t.me/AppleInternalArchive/169" target="_blank">Apple Internal Apps dump (32 bit, you may have Telegram to download this one)</a></li>
+			<li><a href="https://archive.org/details/mac-does-that_202506" target="_blank">Mac Does That (app)</a></li>
+			<li><a href="other/Explore.zip" target="_blank">Explore (app)</a></li>
+			<li><a href="https://archive.org/details/appledemo2018" target="_blank">Apple Demo apps from 2018</a></li>
+			<li><a href="https://archive.org/details/internalui-archive" target="_blank">InternalUI archive</a></li>
+			<li><a href="https://archive.org/details/demoapps-ios14" target="_blank">Demo Apps (iOS 14)</a></li>
+			<li><a href="https://archive.org/details/ios15-demoapps" target="_blank">Demo Apps (iOS 15)</a></li>
+			<li><a href="https://archive.org/details/appintfirmwar3s" target="_blank">Apple Internal Firmwares (backups)</a></li>
+			<li><a href="https://drive.google.com/file/d/1Bq8XlJack7nE5FdQeujxJAgsdBqixJ_-/view?usp=sharing" target="_blank">Apple InternalUI apps (iOS 17.0.3, arm64e)</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
+
+</body>
+</html>

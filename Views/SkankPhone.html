@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkankPhone Tutorial</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+.skankphone-body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(135deg, #f5e6cc, #8b5bb7);
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.skankphone-content {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 60%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+.skankphone-back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #8b5bb7;
+    text-decoration: none;
+    font-weight: 600;
+    background-color: rgba(245, 230, 204, 0.8);
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skankphone-back-arrow:hover {
+    background-color: #8b5bb7;
+    color: #f5e6cc;
+}
+
+.warning {
+    color: #d9534f;
+    font-weight: 600;
+    margin: 15px 0;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skankphone-content h1 {
+    color: #8b5bb7;
+    text-align: center;
+    font-weight: 600;
+}
+
+.guide-list {
+    margin: 20px 0;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.guide-list li {
+    margin-bottom: 10px;
+}
+
+.guide-list strong {
+    font-weight: 600;
+    color: #8b5bb7;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .skankphone-body {
+        padding: 10px;
+    }
+
+    .skankphone-content {
+        width: 90%;
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    .guide-list {
+        font-size: 0.95rem;
+    }
+
+    .skankphone-back-arrow {
+        font-size: 18px;
+        padding: 6px 10px;
+        top: unset;
+        left: unset;
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .warning {
+        margin-top: 0;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+}
+    </style>
+</head>
+<body class="skankphone-body">
+
+    <a href="/index.html" class="skankphone-back-arrow">&larr; Back</a>
+
+    <div class="skankphone-content">
+	
+	<center>
+        <p class="warning">This tutorial works only with iPod touch 1g and iPhone 2g.</p>
+	</center>
+	
+    </div>
+
+    <div class="skankphone-content">
+        <h1>SkankPhone Tutorial</h1>
+
+        <p>Follow the steps below to install SkankPhone on iPod touch 1g / iPhone 2g:</p>
+
+        <ol class="guide-list">
+            <li> Downgrade your iPod touch 1g / iPhone 2g to iPhone OS 1.1.1 - 1.1.5. I prefer to use 1.1.2.</li>
+            <li> Restore the device using iTunes 7.5.</li>
+            <li> Jailbreak the device using <em>ZiPhone</em>.</li>
+            <li> Download the file system <a href="https://mega.nz/file/zA1kQBrD#8R1W4CIOs0b2KGVfCYFKpijXRZJzCkeVowsSJpdy4n4" target="_blank">here.</a></li>
+            <li> Copy all files from <strong>/System/Library/PrivateFrameworks/ [dump]</strong> and paste them into the same directory on your device.</li>
+            <li> Navigate to <strong>/AppleInternal/Applications/SkankPhone.app [dump]</strong> and copy the folder to <strong>/Applications</strong> on your device.</li>
+			<li> <strong>ENJOY!</strong> </li>
+			
+        </ol>
+		 <p>Thanks to Stonneph. </p>
+    </div>
+
+</body>
+</html>
