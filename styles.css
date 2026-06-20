@@ -1,0 +1,374 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: linear-gradient(135deg, #f5e6cc, #8b5bb7);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body {
+    font-family: 'SF Pro Display', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 0;
+    margin: 0 auto;
+}
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1.5s forwards;
+    animation-delay: 0.5s;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.hstack {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.vstack {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.column-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.column h2 {
+    color: #4a4a4a;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #8b5bb7;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 20px;
+    border-radius: 15px;
+    color: #8B5BB7;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 180px;
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #e0e0e0;
+}
+
+.button span {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #555;
+}
+
+.button::after {
+    content: "➜";
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    color: #8b5bb7;
+    transition: transform 0.3s ease;
+}
+
+.button:hover::after {
+    transform: translateX(5px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #8b5bb7;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 30%;
+    text-align: center;
+    font-size: 1.5rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid #8b5bb7;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.1s ease, transform 0.1s ease;
+}
+
+.modal.show .modal-content {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal.hide .modal-content {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.1s ease, transform 0.1s ease;
+}
+
+.close {
+    color: #8b5bb7;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    transition: color 0.1s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.telegram-buttons {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.telegram-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    background-color: #0088cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px;
+}
+
+.telegram-button i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.telegram-button span {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.telegram-button:hover {
+    background-color: #0077b3;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        height: auto;
+        overflow: auto;
+    }
+
+    .column-container {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .column {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .button {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .telegram-buttons {
+        position: static;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .telegram-button {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) and (pointer: coarse) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100vh;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .column-container {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        padding: 0;
+        gap: 15px;
+    }
+
+    .column h2 {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    .column {
+        width: 30%;
+        margin-bottom: 10px;
+    }
+
+    .button {
+        font-size: 0.85rem;
+        padding: 10px 20px;
+        width: 85%;
+    }
+
+    .telegram-buttons {
+        position: static;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .telegram-button {
+        font-size: 0.75rem;
+        padding: 6px 15px;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    body {
+        padding: 10px 20px;
+    }
+
+    .column-container {
+        margin: 0 auto;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .column {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .button {
+        margin: 5px auto;
+    }
+
+    .telegram-buttons {
+        position: static;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .telegram-button {
+        margin: 5px 0;
+    }
+}
