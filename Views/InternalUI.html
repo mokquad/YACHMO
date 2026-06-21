@@ -10,13 +10,8 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #f5e6cc, #8b5bb7);
-    
-    /* ФИКС: градиент застынет на экране и не будет уходить в темноту при скролле */
     background-attachment: fixed;
-    
-    /* Меняем min-height на height, чтобы fixed-фон отработал корректно */
     height: 100vh; 
-    
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -24,12 +19,9 @@ body {
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
-
-    /* ВОТ ЭТА СТРОЧКА ВОЗВРАЩАЕТ ИДЕАЛЬНУЮ ПЛАВНОСТЬ СКРОЛЛА */
     -webkit-overflow-scrolling: touch;
 }
 
-/* Добавь этот блок, он починит скролл в твоем коде */
 html {
     overflow: hidden;
     height: 100vh;
@@ -234,10 +226,10 @@ html {
         <p><strong>Requirements:</strong></p>
         <ul>
             <li>Mac or MacBook</li>
-            <li><a href="https://github.com" class="link">Chimera 1.6.5</a></li>
-            <li><a href="https://github.com" class="link">Legacy iOS Kit</a></li>
-            <li><a href="https://mega.nz" class="link">InternalUI build (16C49)</a></li>
-            <li><a href="https://filezilla-project.org" class="link">FTP client like FileZilla</a></li>
+            <li><a href="https://github.com/pizda" class="link">Chimera 1.6.5</a></li>
+            <li><a href="https://github.com/huy" class="link">Legacy iOS Kit</a></li>
+            <li><a href="https://mega.nz/zalupa" class="link">InternalUI build (16C49)</a></li>
+            <li><a href="https://filezilla-project.org/jopa" class="link">FTP client like FileZilla</a></li>
         </ul>
         <p><strong>Important:</strong></p>
         <ul>
@@ -362,7 +354,7 @@ document.querySelectorAll('.copy-btn').forEach(button => {
                     button.textContent = 'Copy';
                 }, 5000);
             }).catch(err => {
-                console.error('Failed to copy text: ', err);
+                console.error('POSHEL NAHUI: ', err);
             });
         });
     });
