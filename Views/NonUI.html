@@ -199,30 +199,33 @@ code {
     white-space: pre; 
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1024px) {
     html {
-        overflow: auto;
-        height: auto;
+        overflow: auto !important;
+        height: auto !important;
     }
     body {
         width: 100vw;
         overflow-x: hidden;
-        height: auto;
+        height: auto !important;
         min-height: 100vh;
-        padding: 10px;
+        padding: 20px 10px 60px 10px !important;
     }
     .content-box {
-        width: 90%;
+        width: 90% !important; 
         padding: 15px;
-        margin-top: 60px;
+        margin-top: 20px !important;
     }
+    
     .back-arrow {
-        font-size: 18px;
-        padding: 6px 12px;
-        top: 10px;
-        left: 10px;
+        position: static !important; 
+        align-self: center !important;
+        margin-bottom: 15px !important;
+        font-size: 18px !important;
+        padding: 8px 20px !important;
     }
-    ol, ol.guide-list, p, li {
+    
+    ol, ol.guide-list, ul, p, li {
         font-size: 0.95rem;
     }
     h1 {
