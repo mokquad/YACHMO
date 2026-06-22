@@ -7,25 +7,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
+html {
+    overflow-y: auto !important;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto !important;
+    background: linear-gradient(135deg, #f5e6cc, #8b5bb7) !important;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f5e6cc, #8b5bb7);
-    height: 100vh;
-    background-attachment: fixed;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto !important;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 20px 140px 20px !important;
     box-sizing: border-box;
-    overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    position: relative;
+    position: relative; 
+    background: transparent !important;
 }
 
-html {
-    overflow: hidden;
-    height: 100vh;
+body::before {
+    content: "";
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(135deg, #f5e6cc, #8b5bb7) !important;
+    z-index: -1 !important; 
+    pointer-events: none !important; 
 }
 
 .back-arrow {
@@ -49,22 +65,28 @@ html {
 }
 
 .content-box {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2) !important;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
     border: 1px solid rgba(255, 255, 255, 0.3);
     width: 60%;
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1.5s ease forwards;
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    display: block !important;
+    overflow: visible !important;
+    position: relative !important;
+    -webkit-transform: translate3d(0,0,0) !important;
+    transform: translate3d(0,0,0) !important;
+    will-change: auto !important;
 }
 
 @keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% { opacity: 0; transform: translateY(10px) translateZ(0); }
+    100% { opacity: 1; transform: translateY(0) translateZ(0); }
 }
 
 h1 {
@@ -76,10 +98,10 @@ h1 {
 p {
     color: #333;
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 400; 
 }
 
-ol, ol.guide-list {
+ol, ol.guide-list, ul {
     list-style-type: none !important;
     padding-left: 0 !important;
     margin: 20px 0;
@@ -121,6 +143,8 @@ code {
     margin: 16px 0; 
     box-shadow: 0 4px 15px rgba(139, 91, 183, 0.05); 
     overflow: hidden; 
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 } 
 
 .terminal-header { 
@@ -130,6 +154,8 @@ code {
     align-items: center; 
     justify-content: space-between;
     border-bottom: 1px solid rgba(139, 91, 183, 0.12); 
+    width: 100% !important;
+    box-sizing: border-box !important;
 } 
 
 .terminal-left-side {
@@ -184,8 +210,10 @@ code {
 .terminal-block pre { 
     margin: 0; 
     padding: 16px 16px 22px 16px; 
-    overflow-x: auto; 
+    overflow-x: auto !important;
     background: transparent; 
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .terminal-block code { 
@@ -200,29 +228,40 @@ code {
 }
 
 @media screen and (max-width: 1024px) {
-    html {
-        overflow: auto !important;
-        height: auto !important;
-    }
     body {
-        width: 100vw;
-        overflow-x: hidden;
-        height: auto !important;
-        min-height: 100vh;
-        padding: 20px 10px 60px 10px !important;
+        padding: 20px 10px 140px 10px !important; 
     }
     .content-box {
-        width: 90% !important; 
+        width: 90% !important;
         padding: 15px;
         margin-top: 20px !important;
     }
     
-    .back-arrow {
-        position: static !important; 
-        align-self: center !important;
-        margin-bottom: 15px !important;
-        font-size: 18px !important;
-        padding: 8px 20px !important;
+    @media (orientation: portrait) {
+        .back-arrow {
+            position: static !important;
+            align-self: center !important;
+            margin-bottom: 20px !important;
+            font-size: 18px !important;
+            padding: 8px 20px !important;
+        }
+        .content-box {
+            margin-top: 20px !important;
+        }
+    }
+
+    @media (orientation: landscape) {
+        .back-arrow {
+            position: absolute !important;
+            top: 20px !important;
+            left: 20px !important;
+            font-size: 24px !important;
+            padding: 10px 15px !important;
+        }
+        .content-box {
+            margin-top: 80px !important;
+            margin-bottom: 40px !important;
+        }
     }
     
     ol, ol.guide-list, ul, p, li {
@@ -232,6 +271,7 @@ code {
         font-size: 1.3rem;
     }
 }
+
  
     </style>
 </head>
