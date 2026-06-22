@@ -102,55 +102,222 @@ body {
     font-weight: 600;
     color: #8b5bb7;
 }
+html {
+    overflow-y: auto !important;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto !important;
+    background: linear-gradient(135deg, #f5e6cc, #8b5bb7) fixed !important;
+}
 
-@media screen and (max-width: 480px) {
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto !important;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 20px 140px 20px !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    position: relative; 
+    background: transparent !important;
+    margin: 0;
+}
+
+.skankphone-back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #8b5bb7;
+    text-decoration: none;
+    font-weight: 600;
+    background-color: rgba(245, 230, 204, 0.8);
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 9999;
+}
+
+.skankphone-back-arrow:hover {
+    background-color: #8b5bb7;
+    color: #f5e6cc;
+}
+
+.skankphone-content {
+    background: rgba(255, 255, 255, 0.2) !important;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 60%;
+    opacity: 0;
+    animation: skankphone-fadeInUp 1.5s ease forwards;
+    display: block !important;
+    overflow: visible !important;
+    position: relative !important;
+    -webkit-transform: translate3d(0,0,0) !important;
+    transform: translate3d(0,0,0) !important;
+}
+
+@keyframes skankphone-fadeInUp {
+    0% { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #8b5bb7;
+    font-weight: 600;
+}
+
+p {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 400; 
+}
+
+ol, ol.guide-list, ul {
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin: 20px 0;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+strong {
+    font-weight: 600;
+    color: #8b5bb7;
+}
+
+.link {
+    color: #8b5bb7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.warning {
+    color: #ff5f56 !important;
+    background: rgba(255, 95, 86, 0.08) !important;
+    border-left: 4px solid #ff5f56 !important;
+    padding: 12px 16px !important;
+    border-radius: 8px;
+    margin: 20px 0 !important;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.warning strong {
+    color: #ff5f56 !important;
+    font-weight: 600 !important;
+}
+
+@media screen and (max-width: 1024px) {
     body {
-        width: 100vw;
-        overflow-x: hidden;
+        padding: 20px 10px 140px 10px !important; 
     }
-
-    .skankphone-body {
-        padding: 10px;
-    }
-
     .skankphone-content {
-        width: 90%;
+        width: 90% !important;
         padding: 15px;
-        margin-top: 10px;
+        margin-top: 20px !important;
+    }
+    
+    @media (orientation: portrait) {
+        .skankphone-back-arrow {
+            position: static !important;
+            align-self: center !important;
+            margin-bottom: 20px !important;
+            font-size: 18px !important;
+            padding: 8px 20px !important;
+            display: inline-block !important;
+        }
+        .skankphone-content {
+            margin-top: 20px !important;
+        }
     }
 
-    .guide-list {
+    @media (orientation: landscape) {
+        .skankphone-back-arrow {
+            position: absolute !important;
+            top: 20px !important;
+            left: 20px !important;
+            font-size: 24px !important;
+            padding: 10px 15px !important;
+        }
+        .skankphone-content {
+            margin-top: 80px !important;
+            margin-bottom: 40px !important;
+        }
+    }
+    
+    ol, ol.guide-list, ul, p, li {
         font-size: 0.95rem;
     }
-
-    .skankphone-back-arrow {
-        font-size: 18px;
-        padding: 6px 10px;
-        top: unset;
-        left: unset;
-        position: relative;
-        margin-bottom: 10px;
-    }
-
-    .warning {
-        margin-top: 0;
-    }
-
     h1 {
         font-size: 1.3rem;
     }
 }
+
+@media screen and (max-width: 480px) {
+    body {
+        width: 100vw !important;
+        overflow-x: hidden !important;
+        padding: 20px 10px 120px 10px !important;
+    }
+
+    .skankphone-content {
+        width: 90% !important;
+        padding: 15px !important;
+        margin-top: 20px !important;
+    }
+
+    .skankphone-back-arrow {
+        position: static !important;
+        display: inline-block !important;
+        align-self: center !important;
+        margin-bottom: 20px !important;
+        font-size: 18px !important;
+        padding: 8px 20px !important;
+    }
+
+    ol, ol.guide-list, ul, p, li {
+        font-size: 0.95rem !important;
+    }
+
+    h1 {
+        font-size: 1.3rem !important;
+    }
+}
+
+
     </style>
 </head>
 <body class="skankphone-body">
 
-    <a href="/index.html" class="skankphone-back-arrow">&larr; Back</a>
-
-    <div class="skankphone-content">
-	
-	<center>
-        <p class="warning">This tutorial works only with iPod touch 1g and iPhone 2g.</p>
-	</center>
+    <a href="/index.html" class="skankphone-back-arrow">&larr; Back</a> 
 	
     </div>
 
