@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iArchive 2 | InternalUI Tutorial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5e6cc, #8b5bb7);
+    height: 100vh;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+}
+
+html {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #8b5bb7;
+    text-decoration: none;
+    font-weight: 600;
+    background-color: rgba(245, 230, 204, 0.8);
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 9999;
+}
+
+.back-arrow:hover {
+    background-color: #8b5bb7;
+    color: #f5e6cc;
+}
+
+.content-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 60%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    text-align: center;
+    color: #8b5bb7;
+    font-weight: 600;
+}
+
+p {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+ol, ol.guide-list {
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin: 20px 0;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+strong {
+    font-weight: 600;
+    color: #8b5bb7;
+}
+
+.link {
+    color: #8b5bb7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+code { 
+    font-family: "SF Mono", SFMono-Regular, ui-monospace, "JetBrains Mono", Consolas, monospace !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+} 
+
+.terminal-block { 
+    background: rgba(255, 255, 255, 0.25); 
+    border: 1px solid rgba(139, 91, 183, 0.2); 
+    border-left: 4px solid #8b5bb7; 
+    border-radius: 12px; 
+    margin: 16px 0; 
+    box-shadow: 0 4px 15px rgba(139, 91, 183, 0.05); 
+    overflow: hidden; 
+} 
+
+.terminal-header { 
+    background: rgba(139, 91, 183, 0.06); 
+    padding: 10px 14px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(139, 91, 183, 0.12); 
+} 
+
+.terminal-left-side {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.terminal-buttons { 
+    display: flex; 
+    gap: 6px; 
+} 
+
+.terminal-buttons span { 
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%; 
+    display: inline-block; 
+    opacity: 0.4; 
+} 
+
+.btn-1 { background-color: #ff5f56; } 
+.btn-2 { background-color: #ffbd2e; } 
+.btn-3 { background-color: #27c93f; } 
+
+.terminal-title { 
+    font-family: 'Poppins', sans-serif; 
+    font-size: 11px; 
+    font-weight: 500; 
+    color: #8b5bb7; 
+} 
+
+.copy-btn {
+    background: rgba(139, 91, 183, 0.1);
+    border: 1px solid rgba(139, 91, 183, 0.2);
+    color: #8b5bb7;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.copy-btn:hover {
+    background: #8b5bb7;
+    color: #ffffff;
+}
+
+.terminal-block pre { 
+    margin: 0; 
+    padding: 16px 16px 22px 16px; 
+    overflow-x: auto; 
+    background: transparent; 
+}
+
+.terminal-block code { 
+    background: transparent; 
+    padding: 0; 
+    color: #1c1c1e; 
+    font-size: 14.5px; 
+    line-height: 1.6; 
+    font-weight: 400; 
+    display: block; 
+    white-space: pre; 
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        overflow: auto;
+        height: auto;
+    }
+    body {
+        width: 100vw;
+        overflow-x: hidden;
+        height: auto;
+        min-height: 100vh;
+        padding: 10px;
+    }
+    .content-box {
+        width: 90%;
+        padding: 15px;
+        margin-top: 60px;
+    }
+    .back-arrow {
+        font-size: 18px;
+        padding: 6px 12px;
+        top: 10px;
+        left: 10px;
+    }
+    ol, ol.guide-list, p, li {
+        font-size: 0.95rem;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+}
+ 
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-arrow">&larr; Back</a>
+    
+<div class="content-box">
+    <h1>Dualboot NonUI</h1>
+
+    <p><strong>You need to have:</strong></p>
+    <p>NonUI Dump (InternalUI would also do) or decrypted RootFS from any Restore Bundle (can be found on our website).<br>
+    Mac, Linux or even Windows with WSL or MINGW.</p>
+
+    <p><strong>Patch bootchain:</strong></p>
+    
+    <ol class="guide-list">
+        <li>
+            1. Patch iBSS and iBEC:
+            <div class="terminal-block">
+                <div class="terminal-header">
+                    <div class="terminal-left-side">
+                        <div class="terminal-buttons">
+                            <span class="btn-1"></span>
+                            <span class="btn-2"></span>
+                            <span class="btn-3"></span>
+                        </div>
+                        <div class="terminal-title">bash</div>
+                    </div>
+                    <button class="copy-btn">Copy</button>
+                </div>
+                <pre><code>./xpwntool iBSS.orig iBSS.dec -iv iv -k key
+./xpwntool iBEC.orig iBEC.dec -iv iv -k key
+./iBoot32Patcher iBSS.dec iBSS.patched --rsa --dualboot
+./iBoot32Patcher iBEC.dec iBEC.patched --rsa --setenv --debug --dualboot -b \
+"-v amfi=0xff cs_enforcement_disable=1 amfi_get_out_of_my_way=1 debug=0x14e keepsyms=1 rd=disk0s1s3"
+./image3maker -t ibss -f iBSS.patched -o iBSS.img3
+./image3maker -t ibec -f iBEC.patched -o iBEC.img3</code></pre>
+            </div>
+        </li>
+
+        <li>
+            2. Patch DeviceTree:
+            <div class="terminal-block">
+                <div class="terminal-header">
+                    <div class="terminal-left-side">
+                        <div class="terminal-buttons">
+                            <span class="btn-1"></span>
+                            <span class="btn-2"></span>
+                            <span class="btn-3"></span>
+                        </div>
+                        <div class="terminal-title">bash</div>
+                    </div>
+                    <button class="copy-btn">Copy</button>
+                </div>
+                <pre><code>./xpwntool devicetree.orig devicetree.dec -iv iv -k key
+./perl -0777 -pe '
+  s/([\x00-\xff])\x00\x00\x00\x00\x00\x00\x00AAPL,phandle/
+    chr(ord($1)+1)."\x00\x00\x00\x00\x00\x00\x00AAPL,phandle"/e;
+  s/use-lwvm/
+    \x6e\x6f\x2d\x65\x66\x66\x61\x63\x65\x61\x62\x6c\x65\x2d
+    \x73\x74\x6f\x72\x61\x67\x65\x00\x00\x00\x00\x00\x00\x00
+    \x00\x00\x00\x00\x04\x00\x00\x00\x00\x00\x18\x00\x75\x73
+    \x65\x2d\x6c\x77\x76\x6d/x;
+' devicetree.dec > devicetree.patched
+./image3maker -t dtre -f devicetree.patched -o devicetree</code></pre>
+            </div>
+        </li>
+
+        <li>3. Decrypt Kernelcache, Ramdisk and Applelogo.</li>
+
+        <li>4. After these, use <a href="https://nyansatan.github.io/dualboot/partitioning.html" target="_blank" class="link">Partitioning</a>, <a href="https://nyansatan.github.io/dualboot/restoringrootfs.html" target="_blank" class="link">Restoring</a> and <a href="https://nyansatan.github.io/dualboot/modifyingfilesystems.html" target="_blank" class="link">Modifying Filesystems</a>.</li>
+        
+        <li>OTA cleaning is not unnessasary, but still can be peformed.</li>
+
+        <li>If you are dualbooting NonUI that is higher than iOS 7+, use <a href="https://nyansatan.github.io/dualboot/ios7plusdualboot.html" target="_blank" class="link">this guide</a>. And if you are dualbooting iOS 5.X, use <a href="https://nyansatan.github.io/dualboot/ios5dualboot.html" target="_blank" class="link">this</a>.</li>
+
+        <li>
+            Also, if you wanna clean a bit more space on iOS 7+, you can use it:
+            <div class="terminal-block">
+                <div class="terminal-header">
+                    <div class="terminal-left-side">
+                        <div class="terminal-buttons">
+                            <span class="btn-1"></span>
+                            <span class="btn-2"></span>
+                            <span class="btn-3"></span>
+                        </div>
+                        <div class="terminal-title">bash</div>
+                    </div>
+                    <button class="copy-btn">Copy</button>
+                </div>
+                <pre><code>rm -rf /mnt3/Developer/*
+rm -rf /mnt3/.Trashes/*</code></pre>
+            </div>
+        </li>
+        
+        <li>
+            Or if Kernelcache is presented:
+            <div class="terminal-block">
+                <div class="terminal-header">
+                    <div class="terminal-left-side">
+                        <div class="terminal-buttons">
+                            <span class="btn-1"></span>
+                            <span class="btn-2"></span>
+                            <span class="btn-3"></span>
+                        </div>
+                        <div class="terminal-title">bash</div>
+                    </div>
+                    <button class="copy-btn">Copy</button>
+                </div>
+                <pre><code>rm -rf /mnt3/System/Library/Caches/com.apple.kernelcaches/*</code></pre>
+            </div>
+        </li>
+
+        <li>5. Then, unplug the device if it was connected and reboot.</li>
+
+        <li>
+            6. Upload the bootchain to /mnt3 (devicetree, kernelcache, ramdisk and applelogo).<br>
+            Keep the iBSS and iBEC somewhere in /root, not including /private/var.
+        </li>
+
+        <li>
+            7. Boot it:
+            <div class="terminal-block">
+                <div class="terminal-header">
+                    <div class="terminal-left-side">
+                        <div class="terminal-buttons">
+                            <span class="btn-1"></span>
+                            <span class="btn-2"></span>
+                            <span class="btn-3"></span>
+                        </div>
+                        <div class="terminal-title">bash</div>
+                    </div>
+                    <button class="copy-btn">Copy</button>
+                </div>
+                <pre><code>./multi_kloader /path/to/iBSS /path/to/iBEC</code></pre>
+            </div>
+        </li>
+    </ol>
+	
+	<p><strong>8. ENJOY!</strong></p>
+	
+	<p>Thanks to Stonneph for original guide and to Mokquad for reimagined guide.</p>
+</div>
+
+<div class="content-box">
+        <h1>Tutorial for installing 7D11 build</h1>
+
+        <ol class="guide-list">
+            <li> 1. First, download the restore bundle and tools from here: <a href="https://drive.google.com/file/d/1-U-n1UV8aJfECxgIZgusfJpfIuHvp5ti/view?usp=sharing" target="_blank">link for a build</a></li>
+            <li> 2. After, unzip it and open <strong>018-4658-200.dmg</strong> and <strong>018-6135-014.dmg</strong> and install the packages.</li>
+            <li> 3. Then, open the application FactoryRestore, select <strong>Internal</strong> in the Restore Settings dropdown and plug your device in.</li>
+            <li> 4. Next, press the little square next to restore bundle on the right side and guide it to the path for the Restore folder inside the restore bundle.</li>
+            <li> 5. After, click on the device and then click restore, choose <strong>Internal</strong> (for an InternalUI and NonUI merged install) or if you want you can select <strong>NonUI internal</strong> (unsure if the other images work), and then select <strong>Development</strong> for the kernel type and firmware type, Debug does not work, then restore the device</li>
+            <li> 6. If the device fails the restore but the bar on the device’s screen is full, reboot it and then use <strong>Legacy iOS Kit</strong> to kick it out of recovery mode. If the bar is not full then you’ll have to restore iOS with <strong>iTunes 10.7</strong> since on reboot the device will be forced into DFU mode.</li>
+			<li> 7. <strong>ENJOY!</strong></li>
+        </ol>
+        <p> Thanks to MWR (Fit_Mycologist_8247). </p>
+    </div>
+</div>
+	<div class="content-box">
+        <h1>How to change InternalUI on NonUI or NonUI on InternalUI (FullInternal!)</h1>
+
+        <p>How to change InternalUI on NonUI:</p>
+
+            <div class="terminal-block">
+        <div class="terminal-header">
+            <div class="terminal-left-side">
+                <div class="terminal-buttons">
+                    <span class="btn-1"></span>
+                    <span class="btn-2"></span>
+                    <span class="btn-3"></span>
+                </div>
+                <div class="terminal-title">bash</div>
+            </div>
+            <button class="copy-btn">Copy</button>
+        </div>
+        <pre><code>launchctl unload -w /System/Library/LaunchDaemons/com.apple.SpringBoard.plist
+launchctl load -w /AppleInternal/Applications/SwitchBoard.app/com.apple.SwitchBoard.plist</code></pre>
+		</div>
+		
+		<p>How to change NonUI on Internal:</p>
+		
+		 <div class="terminal-block">
+        <div class="terminal-header">
+            <div class="terminal-left-side">
+                <div class="terminal-buttons">
+                    <span class="btn-1"></span>
+                    <span class="btn-2"></span>
+                    <span class="btn-3"></span>
+                </div>
+                <div class="terminal-title">bash</div>
+            </div>
+            <button class="copy-btn">Copy</button>
+        </div>
+            <pre><code>launchctl unload -w /AppleInternal/Applications/SwitchBoard.app/com.apple.SwitchBoard.plist
+launchctl load -w /System/Library/LaunchDaemons/com.apple.SpringBoard.plist</code></pre>
+		</div>	
+		<p> Thanks to FujiExpo. </p>
+   
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(button => {
+        let timeoutId;
+
+        button.addEventListener('click', () => {
+            const block = button.closest('.terminal-block');
+            const codeText = block.querySelector('code').innerText;
+
+            navigator.clipboard.writeText(codeText).then(() => {
+                clearTimeout(timeoutId);
+
+                button.textContent = 'Copied!';
+
+                timeoutId = setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 5000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        });
+    });
+	
+</script>
+</body>
+</html>
