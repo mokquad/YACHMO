@@ -10,7 +10,7 @@
 html {
     overflow-y: auto !important;
     min-height: 100vh;
-    min-height: 100dvh; 
+    min-height: 100dvh;
     height: auto !important;
     background-color: #f5e6cc !important;
 }
@@ -24,7 +24,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    padding: 20px 20px 100px 20px !important; 
+    padding: 20px 20px 120px 20px !important;
     box-sizing: border-box;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
@@ -41,10 +41,10 @@ body::before {
     height: 100vh !important;
     height: 100dvh !important;
     background: linear-gradient(135deg, #f5e6cc, #8b5bb7) !important;
-    z-index: -1 !important; /* Уводит фон строго ПОД контент сайта */
+    z-index: -1 !important; 
     pointer-events: none !important; 
 }
-		
+
 .back-arrow {
     position: absolute;
     top: 20px;
@@ -66,19 +66,22 @@ body::before {
 }
 
 .content-box {
-    background: rgba(255, 255, 255, 0.35) !important;
+    background: rgba(255, 255, 255, 0.2) !important;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     width: 60%;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1.5s ease forwards;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    transform: translateZ(0) !important;
+    display: block !important;
+    overflow: visible !important;
+    contain: layout styles !important;
+    position: relative !important;
 }
 
 @keyframes fadeInUp {
@@ -117,10 +120,9 @@ strong {
 }
 
 .link {
-    color: #333;
+    color: #8b5bb7;
     text-decoration: none;
-	font-size: 1.1rem
-    font-weight: 300;
+    font-weight: 600;
 }
 
 .link:hover {
@@ -141,6 +143,8 @@ code {
     margin: 16px 0; 
     box-shadow: 0 4px 15px rgba(139, 91, 183, 0.05); 
     overflow: hidden; 
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 } 
 
 .terminal-header { 
@@ -150,6 +154,8 @@ code {
     align-items: center; 
     justify-content: space-between;
     border-bottom: 1px solid rgba(139, 91, 183, 0.12); 
+    width: 100% !important;
+    box-sizing: border-box !important;
 } 
 
 .terminal-left-side {
@@ -204,8 +210,10 @@ code {
 .terminal-block pre { 
     margin: 0; 
     padding: 16px 16px 22px 16px; 
-    overflow-x: auto; 
+    overflow-x: auto !important;
     background: transparent; 
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .terminal-block code { 
@@ -220,13 +228,9 @@ code {
 }
 
 @media screen and (max-width: 1024px) {
-    
     body {
-        width: 100vw;
-        overflow-x: hidden;
         padding: 20px 10px 120px 10px !important; 
     }
-    
     .content-box {
         width: 90% !important;
         padding: 15px;
@@ -266,6 +270,7 @@ code {
         font-size: 1.3rem;
     }
 }
+
 
 </style>
 </head>
