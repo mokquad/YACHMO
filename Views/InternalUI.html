@@ -73,15 +73,15 @@ body::before {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     width: 60%;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1.5s ease forwards;
-    -webkit-backdrop-filter: blur(10px); 
-    backdrop-filter: blur(10px);
-    will-change: transform, backdrop-filter;
-    transform: translateZ(0);
+    transform-style: preserve-3d !important; 
+    backface-visibility: hidden !important; 
+    will-change: transform !important; 
 }
 
 @keyframes fadeInUp {
