@@ -7,12 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
+/* Базовые стили страницы (ПОЛНЫЙ ФИКС ГЛИТЧЕЙ И ОТСКОКОВ SAFARI) */
 html {
     overflow-y: auto !important;
     min-height: 100vh;
     min-height: 100dvh;
     height: auto !important;
-    background-color: #f5e6cc !important;
+    background: linear-gradient(135deg, #f5e6cc, #8b5bb7) !important;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    padding: 20px 20px 120px 20px !important;
+    padding: 20px 20px 140px 20px !important; /* Мощный паддинг, чтобы низ никогда не зажевывался */
     box-sizing: border-box;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
@@ -32,19 +33,20 @@ body {
     background: transparent !important;
 }
 
+/* Статичный фон, который плавно скроллится вместе с iPad и не багается */
 body::before {
     content: "";
-    position: fixed !important;
+    position: absolute !important;
     top: 0 !important;
     left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    height: 100dvh !important;
+    width: 100% !important;
+    height: 100% !important;
     background: linear-gradient(135deg, #f5e6cc, #8b5bb7) !important;
     z-index: -1 !important; 
     pointer-events: none !important; 
 }
 
+/* Настоящая кнопка Назад (круглая капсула в углу на ПК) */
 .back-arrow {
     position: absolute;
     top: 20px;
@@ -65,6 +67,7 @@ body::before {
     color: #f5e6cc;
 }
 
+/* Главные блоки контента */
 .content-box {
     background: rgba(255, 255, 255, 0.2) !important;
     padding: 20px;
@@ -76,17 +79,20 @@ body::before {
     border: 1px solid rgba(255, 255, 255, 0.3);
     width: 60%;
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1.5s ease forwards;
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards; /* Ускорили и сгладили анимацию */
     display: block !important;
     overflow: visible !important;
-    contain: layout styles !important;
     position: relative !important;
+    
+    /* Фикс отслоения кадров на iOS */
+    -webkit-transform: translate3d(0,0,0) !important;
+    transform: translate3d(0,0,0) !important;
+    will-change: auto !important; /* Сбрасываем кэш слоев после завершения анимации */
 }
 
 @keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% { opacity: 0; transform: translateY(10px) translateZ(0); }
+    100% { opacity: 1; transform: translateY(0) translateZ(0); }
 }
 
 h1 {
@@ -227,6 +233,7 @@ code {
     white-space: pre; 
 }
 
+/* Адаптивность для мобильных и планшетов (Твой любимый элитный вариант) */
 @media screen and (max-width: 1024px) {
     html {
         overflow: auto !important;
@@ -262,6 +269,9 @@ code {
         font-size: 1.3rem;
     }
 }
+</style>
+</head>
+<body>
 
 
 
