@@ -12,7 +12,7 @@ html {
     min-height: 100vh;
     min-height: 100dvh;
     height: auto !important;
-    background: linear-gradient(135deg, #f5e6cc, #8b5bb7) !important;
+    background: linear-gradient(135deg, #f5e6cc, #8b5bb7) fixed !important;
 }
 
 body {
@@ -30,18 +30,6 @@ body {
     -webkit-overflow-scrolling: touch;
     position: relative; 
     background: transparent !important;
-}
-
-body::before {
-    content: "";
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    background: linear-gradient(135deg, #f5e6cc, #8b5bb7) !important;
-    z-index: -1 !important; 
-    pointer-events: none !important; 
 }
 
 .back-arrow {
