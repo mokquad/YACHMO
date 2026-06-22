@@ -277,91 +277,92 @@ code {
 </style>
 </head>
 <body>
-    <a href="../index.html" class="back-arrow">&larr; Back</a>
 
-    <div class="content-box">
-        <h1>InternalUI Setup with SSH Ramdisk (iOS 12)</h1>
-		
+<a href="../index.html" class="back-arrow">&larr; Back</a>
+
+<div class="content-box">
+    <h1>InternalUI Setup with SSH Ramdisk</h1>
+    
     <p><strong>You need to have:</strong></p>
-	<ul style="list-style-type: none !important; padding-left: 0 !important; margin: 20px 0 !important;">
-            <li>Mac or MacBook</li>
-            <li><a href="https://github.com" class="link">Chimera 1.6.5</a></li>
-            <li><a href="https://github.com" class="link">Legacy iOS Kit</a></li>
-            <li><a href="https://mega.nz" class="link">InternalUI build (16C49)</a></li>
-            <li><a href="https://filezilla-project.org" class="link">FTP client like FileZilla</a></li>
-    </ul>	
-        <ol class="guide-list">
-		    <p><strong>Follow the steps below (works only on iPhone 5s and iPhone 6!):</strong></p>
-            <li>1. SSH ramdisk with Legacy iOS Kit, then copy "/AppleInternal" to "/mnt1".</li>
-            <li>2. Copy "/System/Library/PrivateFrameworks" from the dump and paste it to "/mnt1/System/Library/PrivateFrameworks" (skip things that already exist, we only need internal frameworks).</li>
-            <li>3. Copy Perl and Pearl (if they exist) from "/System/Library" into "/mnt1/System/Library".</li>
-            <li>
-                4. Edit "SystemVersion.plist" to add the following:<br>
-                <div class="terminal-block">
-                    <div class="terminal-header">
-                        <div class="terminal-left-side">
-                            <div class="terminal-buttons">
-                                <span class="btn-1"></span>
-                                <span class="btn-2"></span>
-                                <span class="btn-3"></span>
-                            </div>
-                            <div class="terminal-title">bash</div>
+    <ul class="guide-list">
+        <li>Mac or MacBook</li>
+        <li>Chimera 1.6.5</li>
+        <li>Legacy iOS Kit</li>
+        <li>InternalUI build (16C49)</li>
+        <li>FTP client like <a href="#" target="_blank" class="link">FileZilla</a></li>
+    </ul>
+
+    <p><strong>Follow the steps below:</strong></p>
+
+    <ol class="guide-list">
+        <li>SSH ramdisk with Legacy iOS Kit and copy "/AppleInternal" to "/mnt1".</li>
+        <li>Copy "/System/Library/PrivateFrameworks" from the dump and paste it to "/mnt1/System/Library/PrivateFrameworks" (skip things that already exist, we only need internal frameworks).</li>
+        <li>Copy Perl and Pearl (if they exist) from "/System/Library" into "/mnt1/System/Library".</li>
+        <li>
+            Edit "SystemVersion.plist" to add the following:<br>
+            <div class="terminal-block">
+                <div class="terminal-header">
+                    <div class="terminal-left-side">
+                        <div class="terminal-buttons">
+                            <span class="btn-1"></span>
+                            <span class="btn-2"></span>
+                            <span class="btn-3"></span>
                         </div>
-                        <button class="copy-btn">Copy</button>
+                        <div class="terminal-title">xml</div>
                     </div>
-                    <pre><code>&lt;key&gt;ReleaseType&lt;/key&gt;
-&lt;string&gt;Internal&lt;/string&gt;</code></pre>
+                    <button class="copy-btn">Copy</button>
                 </div>
-            </li>
-            <li>5. Save the plist and place it into the "CoreServices" folder.</li>
-            <li>6. Show the contents of "SpringBoard.app" in your dump and copy everything EXCEPT the SpringBoard (Unix executable file). Paste it into "SpringBoard.app" in "/mnt1", skipping files that already exist.</li>
-            <li>
-                7. Run the following commands in SSH Ramdisk:<br>
-                <div class="terminal-block">
-                    <div class="terminal-header">
-                        <div class="terminal-left-side">
-                            <div class="terminal-buttons">
-                                <span class="btn-1"></span>
-                                <span class="btn-2"></span>
-                                <span class="btn-3"></span>
-                            </div>
-                            <div class="terminal-title">bash</div>
+                <pre><code>&lt;key&gt;ReleaseType&lt;/key&gt;
+&lt;string&gt;Internal&lt;/string&gt;</code></pre>
+            </div>
+        </li>
+        <li>Save the plist and place it into the "CoreServices" folder.</li>
+        <li>Show the contents of "SpringBoard.app" in your dump and copy everything EXCEPT the SpringBoard (Unix executable file). Paste it into "SpringBoard.app" in "/mnt1", skipping files that already exist.</li>
+        <li>
+            Run the following commands in SSH Ramdisk:<br>
+            <div class="terminal-block">
+                <div class="terminal-header">
+                    <div class="terminal-left-side">
+                        <div class="terminal-buttons">
+                            <span class="btn-1"></span>
+                            <span class="btn-2"></span>
+                            <span class="btn-3"></span>
                         </div>
-                        <button class="copy-btn">Copy</button>
+                        <div class="terminal-title">bash</div>
                     </div>
-                    <pre><code>chown -R root:wheel /mnt1/AppleInternal/
+                    <button class="copy-btn">Copy</button>
+                </div>
+                <pre><code>chown -R root:wheel /mnt1/AppleInternal/
 chown -R root:wheel /mnt1/System/Library/Perl/
 chown -R root:wheel /mnt1/System/Library/Pearl/
 chown -R root:wheel /mnt1/System/Library/PrivateFrameworks/</code></pre>
-                </div>
-            </li>
-            <li>8. Reboot and enjoy the internalUI dump!</li>
-        </ol>
+            </div>
+        </li>
+        <li>Reboot and enjoy the internalUI dump!</li>
+    </ol>
 
-        <p><strong>NOTES:</strong> To internalize your device, it must be jailbroken semi-untethered (e.g., Taurine or Chimera). Semi-tethered jailbreaks (like checkra1n) will not work with this method. Be sure to install tweaks at least once.</p>
-    </div>
+    <p><strong>NOTES:</strong> To internalize your device, it must be jailbroken semi-untethered (e.g., Taurine or Chimera). Semi-tethered jailbreaks (like checkra1n) will not work with this method. Be sure to install tweaks at least once.</p>
+</div>
 
-    <script>
-    document.querySelectorAll('.copy-btn').forEach(button => {
-        let timeoutId;
+<script>
+document.querySelectorAll('.copy-btn').forEach(button => {
+    let timeoutId;
 
-        button.addEventListener('click', () => {
-            const block = button.closest('.terminal-block');
-            const codeText = block.querySelector('code').innerText;
+    button.addEventListener('click', () => {
+        const block = button.closest('.terminal-block');
+        const codeText = block.querySelector('code').innerText;
 
-            navigator.clipboard.writeText(codeText).then(() => {
-                clearTimeout(timeoutId);
+        navigator.clipboard.writeText(codeText).then(() => {
+            clearTimeout(timeoutId);
 
-                button.textContent = 'Copied!';
+            button.textContent = 'Copied!';
 
-                timeoutId = setTimeout(() => {
-                    button.textContent = 'Copy';
-                }, 2000); // Изменено на 2 секунды для лучшего UX
-            }).catch(err => {
-                console.error('Failed to copy text: ', err);
-            });
+            timeoutId = setTimeout(() => {
+                button.textContent = 'Copy';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
         });
     });
-    </script>
-</body>
-</html>
+});
+</script>	
