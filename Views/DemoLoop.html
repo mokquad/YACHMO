@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iArchive 2 | DemoLoop Tutorial</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #f5e6cc, #8b5bb7);
-            min-height: 100vh;
+            height: 100vh;
+			background-attachment: fixed; 
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -18,6 +19,11 @@
             padding: 20px;
             box-sizing: border-box;
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        html {
+            overflow: hidden;
+            height: 100vh;
         }
         .content-box {
             background: rgba(255, 255, 255, 0.2);
@@ -41,26 +47,50 @@
             color: #8b5bb7;
             font-weight: 600;
         }
-        ol {
+        .custom-list {
+            list-style-type: none;
+            padding-left: 0;
             margin: 20px 0;
             color: #333;
             font-size: 1.1rem;
             font-weight: 300;
         }
-        li {
+        .custom-list li {
             margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .custom-list li.step {
+            position: relative;
+            padding-left: 1.8rem;
+        }
+        .custom-list li.step .num {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: 300;
+        }
+        .content-box p, .content-box ul {
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 300;
+            line-height: 1.5;
+            margin: 15px 0;
+        }
+        .content-box ul {
+            padding-left: 20px;
+        }
+        .content-box ul li {
+            list-style-type: disc;
         }
         strong {
             font-weight: 600;
             color: #8b5bb7;
         }
-        
         .warning {
             color: #d9534f;
             font-weight: 600;
             margin: 15px 0;
         }
-
         .back-arrow {
             position: absolute;
             top: 20px;
@@ -73,31 +103,39 @@
             padding: 10px 15px;
             border-radius: 50px;
             transition: background-color 0.3s ease, color 0.3s ease;
+            z-index: 10;
         }
         .back-arrow:hover {
             background-color: #8b5bb7;
             color: #f5e6cc;
         }
+@media screen and (orientation: landscape) and (max-height: 600px) {
+    .back-arrow {
+        position: relative;
+        top: unset;
+        left: unset;
+        display: block;
+        margin: 10px auto 0 auto;
+        text-align: center;
+        width: max-content;
+    }
+    .content-box {
+        margin-top: 15px;
+    }
+}
 @media screen and (max-width: 480px) {
     body {
         width: 100vw;
         overflow-x: hidden;
     }
-
-    .body {
-        padding: 10px;
-    }
-
     .content-box {
         width: 90%;
         padding: 15px;
         margin-top: 10px;
     }
-
-    .guide-list {
+    .custom-list, .content-box p, .content-box ul {
         font-size: 0.95rem;
     }
-
     .back-arrow {
         font-size: 18px;
         padding: 6px 10px;
@@ -106,11 +144,9 @@
         position: relative;
         margin-bottom: 10px;
     }
-
     .warning {
         margin-top: 0;
     }
-
     h1 {
         font-size: 1.3rem;
     }
@@ -121,49 +157,47 @@
     <a href="../index.html" class="back-arrow">&larr; Back</a>
     
     <div class="content-box">
-	<center>
-        <p class="warning">This will erase all data on the device, and you might not be able to unenroll.</p>
-	</center>	
-    </div>
-    
-    <div class="content-box">
         <h1>How to get to the Demo Mode</h1>
-        <ol>
-            <li>Go to <a href="https://demounit.apple.com" class="link" target="_blank">demounit.apple.com</a> (on a other device, not the one you want to install demo mode on).</li>
-            <li>Sign in with your Apple ID.</li>
-            <li>Install the app.</li>
-            <li>Choose a random Apple Store (doesn't matter).</li>
-            <li>Tap "Enroll a new device".</li>
-            <li>Click "Manual entry".</li>
-            <li>Enter the serial number of your device (the device you're trying to put demo mode on).</li>
-            <li>Click "Submit".</li>
-            <li>Click "Confirm", then it will show you a code. Write down/save it for later.</li>
-            <li>Reset all content and settings on the device you want to install demo mode on (not the device with the DemoUnit app).</li>
-            <li>Continue setup until you're asked for a code. Enter the code you got at step 9.</li>
-            <li>Wait until the demo update finishes.</li>
-            <li><strong>ENJOY!</strong></li>
-        </ol>
+        <ul class="custom-list">
+            <li><strong>You need to have:</strong></li>
+            <li>A main device (device where you wanna get to Demo Update) and any other device.</li>	
+            <li class="warning">This will erase all data on the device, and you might not be able to unenroll. Keep that in mind, so never try to do that on your personal phone!</li>
+            <li style="margin-top: 15px;"><strong>Follow the steps below:</strong></li>
+            <li class="step"><span class="num">1.</span>Go to <a href="https://apple.com" class="link" target="_blank">demounit.apple.com</a> (on another device, not the one you want to install demo mode on).</li>
+            <li class="step"><span class="num">2.</span>Sign in with your Apple ID.</li>
+            <li class="step"><span class="num">3.</span>Install the app.</li>
+            <li class="step"><span class="num">4.</span>Choose a random Apple Store (doesn't matter).</li>
+            <li class="step"><span class="num">5.</span>Tap "Enroll a new device".</li>
+            <li class="step"><span class="num">6.</span>Click "Manual entry".</li>
+            <li class="step"><span class="num">7.</span>Enter the serial number of your device (the device you're trying to put demo mode on).</li>
+            <li class="step"><span class="num">8.</span>Click "Submit".</li>
+            <li class="step"><span class="num">9.</span>Click "Confirm", then it will show you a code. Write down/save it for later.</li>
+            <li class="step"><span class="num">10.</span>Reset all content and settings on the device you want to install demo mode on (not the device with the DemoUnit app).</li>
+            <li class="step"><span class="num">11.</span>Continue setup until you're asked for a code. Enter the code you got at step 9.</li>
+            <li class="step"><span class="num">12.</span>Wait until the demo update finishes.</li>
+            <li style="margin-top: 15px;"><strong>ENJOY!</strong></li>
+        </ul>
     </div>
 
     <div class="content-box">
         <h1>How to get device out of Demo Mode</h1>
-        <ol>
-            <li>Go to the admin menu (three fingers in the corner - picture link at the bottom).</li>
-            <li>Press "Unenroll", it will work fine!</li>
-            <li>If the store is enrolled in the Demo Device Lock Theft Deterrence Program, you have to use the web app, which you don’t have the password for, so you can’t unenroll it.</li>
-            <li>Just put your three fingers in the areas there, and then choose reset.</li>
-        </ol>
+        <ul class="custom-list">
+            <li class="step"><span class="num">1.</span>Go to the admin menu (three fingers in the corner —— picture link at the bottom).</li>
+            <li class="step"><span class="num">2.</span>Press "Unenroll".</li>
+            <li class="step"><span class="num">3.</span>If the store is enrolled in the Demo Device Lock Theft Deterrence Program, you have to use the web app, which you don’t have the password for, so you can’t unenroll it.</li>
+            <li class="step"><span class="num">4.</span>Just put your three fingers in the areas there, and then choose reset.</li>
+        </ul>
     </div>
 
     <div class="content-box">
         <h1>How to get to the Retail Demo Mode on Apple TV</h1>
-        <ol>
-            <li>Open "Settings".</li>
-            <li>Click "General" and highlight "About".</li>
-            <li>Press the "Play/Pause" button 4 times.</li>
-            <li>Click the "Demo Mode" panel and select "Apple Store" or "Channel" to set the retail demo mode type.</li>
-            <li>Click "Apply Changes" to enable Demo mode.</li>
-        </ol>
+        <ul class="custom-list">
+            <li class="step"><span class="num">1.</span>Open "Settings".</li>
+            <li class="step"><span class="num">2.</span>Click "General" and highlight "About".</li>
+            <li class="step"><span class="num">3.</span>Press the "Play/Pause" button 4 times.</li>
+            <li class="step"><span class="num">4.</span>Click the "Demo Mode" panel and select "Apple Store" or "Channel" to set the retail demo mode type.</li>
+            <li class="step"><span class="num">5.</span>Click "Apply Changes" to enable Demo mode.</li>
+        </ul>
         <p><strong>Note:</strong> To turn off demo mode, simply follow steps 1-4 and choose the "Off" option.</p>
         <p><strong>In Demo Mode:</strong> Many settings are greyed out and inaccessible. Demo Mode allows you to:</p>
         <ul>
