@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iArchive 2 | Internal Firmwares</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+			background: linear-gradient(135deg, #f5e6cc, #8b5bb7);
+	color: white;
+     background: linear-gradient(135deg, #f5e6cc, #8b5bb7);
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 60%;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease forwards;
+            background-image: url("../Assets/BG/ios8bg.png");
+            background-position: 50% 70%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .device-card-iphone2g {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/2G.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .device-card-iphone3gs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/3GS.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+		
+        .device-card-iphone3g {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/3G.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .device-card-iphone4 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/4.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone4s {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/4S.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone5 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/5.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone5c {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/5C.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone5s {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/5S.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone6 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/6.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone6s {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/6S.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone6sp {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/6SP.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone7 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/7.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone8 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/8.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone8p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/8P.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphonex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/X.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphonexr {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/XR.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphonexs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/XS.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphonexsm {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/XSM.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone11 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/11.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone12p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/12P.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone12m {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/12M.png");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone12 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/12.png");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone12pm {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/12P.png");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone13p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/13P.png");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone14pm {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/14PM.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone14plus {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/14Plus.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-iphone15p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/15P.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+			}
+        .device-card-iphone15pm {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/15PM.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+			}
+        .device-card-iphone16 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/16.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+			}
+        .device-card-ipad1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPad1.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+		}
+        .device-card-ipad2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPad2.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-ipad3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPad3.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-ipadmini1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPadmini1.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-ipadair2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPadAir2.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-ipadair4 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPadAir4.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-ipad5 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPad5.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-ipad6 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPad6.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+		    .device-card-ipadpro1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPadPro1.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+		    .device-card-ipadpro2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPadPro2.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+		    .device-card-ipadpro3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPadPro3.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+		    .device-card-ipadmini6 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPadMini6.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-ipadunreleased {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/ipadunreleased.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-ipadprom1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/ipadprom1.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-ipadairm2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/ipadairm2.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+		.device-card-ipodtouch2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPodTouch2.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+		.device-card-ipodtouch4 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPadmini1.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+		.device-card-ipodtouch5 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPodTouch5.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-ipodtouch6 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/iPodTouch6.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-Watch1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/watch1.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-series-watch1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/swatch1.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-series-watchultra2{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/swatchultra2.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-horizon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/horizon.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-macossierra {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/macossierra.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-macosmojave {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/macosmojave.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-macosbigsur{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/macosbigsur.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-macosventura{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/macosventura.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-macossonoma{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/macossonoma.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-T2{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/T2.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .device-card-other{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            background-image: url("../Assets/BG/other.jpg");
+            background-position: 50% 50%;
+            -webkit-background-size: cover;
+            min-height: 100px;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+        } 
+	  
+        .device-card ul {
+            list-style-type: none;
+            margin-top: 10px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .device-card ul li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .device-card ul a {
+            color: lightblue;
+            text-decoration: none;
+            margin-top: 10px;
+            flex-shrink: 0;
+        }
+
+        .device-card h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-content {
+            max-width: 60%;
+        }
+
+        .device-image img {
+            max-height: 120px;
+        }
+
+        .download-btn {
+            color: #6790ff;
+            border: none;
+            padding: 8px 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: #8b5bb7;
+            text-decoration: none;
+            font-weight: 600;
+            background-color: rgba(245, 230, 204, 0.8);
+            padding: 10px 15px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .back-arrow:hover {
+            background-color: #8b5bb7;
+            color: #f5e6cc;
+        }
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[class^="device-card-"] {
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fadeInUp 1.2s ease forwards;
+    animation-delay: 0.2s;
+}
+	  
+@media (max-width: 768px) {
+    .content-box,
+    [class^="device-card-"] {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-box,
+    [class^="device-card-"] {
+        width: 100%;
+        padding: 15px;
+    }
+	    .back-arrow {
+        font-size: 18px;
+        padding: 6px 10px;
+        top: unset;
+        left: unset;
+        position: relative;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-arrow">&larr; Back</a>
+
+    <div class="content-box">
+        <h1>Internal Firmwares</h1>
+        <p>Big thanks to: Stonneph, Someyoshino, Dosdude, Orangerain, plx.</p>
+    </div>
+
+    <div class="device-card-iphone2g">
+        <div class="card-content">
+            <h2>iPhone 2G</h2>
+            <p><strong>BoardConfig:</strong> M68AP</p>
+            <p><strong>Processor:</strong> S5L8900</p>
+            <ul>
+                <li>1A420 (NonUI) ⠀	 <a class="download-btn" href="https://mega.nz/file/2RUhTZpA#HmRsztmrp6bHJOIAfrwyZW6hKECvpR-JAS8_Ot5F_8E">Download</a></li>
+            </ul>
+        </div>
+        <div class="device-image">
+            <img src="../Assets/iphone/iphone_2g.png" alt="iPhone 2G">
+        </div>
+    </div>
+
+    <div class="device-card-iphone3g">
+        <div class="card-content">
+            <h2>iPhone 3G</h2>
+			<p><strong>BoardConfig:</strong> N82AP</p>
+            <p><strong>Processor:</strong> S5L8900</p>
+            <ul>
+                <li>5C274a (NonUI) </li>
+            </ul>
+        </div>
+        <div class="device-image">
+            <img src="../Assets/iphone/iphone_3g.png" alt="iPhone 3G">
+        </div>
+    </div>
+
+    <div class="device-card-iphone3gs">
+        <div class="card-content">
+            <h2>iPhone 3GS</h2>
+			<p><strong>BoardConfig:</strong> N88AP</p>
+            <p><strong>Processor:</strong> S5L8920</p>
+            <ul>
+                <li>8A2180g (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/TEdTESKa#s-Mu6FH3Ia3Fz2ptCZnmXR-qjmNc7mfrDi0bNNXT9So">Download</a></li>
+                <li>9B3176n (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/fU8knLBQ#irr7elB2gi_ENYEDbLeEZ5NPc226p5KF00fEzUes2fk">Download</a></li>
+            </ul>
+        </div>
+        <div class="device-image">
+            <img src="../Assets/iphone/iphone_3g.png" alt="iPhone 3GS">
+        </div>
+    </div>
+
+<div class="device-card-iphone4">
+    <div class="card-content">
+        <h2>iPhone 4</h2>
+			<p><strong>BoardConfig:</strong> N90AP</p>
+            <p><strong>Processor:</strong> S5L8930</p>
+        <ul>
+            <li>8A133 (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/3VckjJqZ#F11U23fjoCGr5OJ_2zOBVEz-OAs4qDU57pb8CjMKGDQ">Download</a></li>
+            <li>9B3176n (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/TcsACRJT#P1H39HVE3hcN8wNlEnWIW2qS5AfLOfRZfHppdC-c7YY">Download</a></li>
+            <li>8A2180g (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/TVlFXKSQ#9o04A2mOgwcnT8kzabo0TialC5SpYzu9EuT09zLL6uY">Download</a></li>
+            <li>11B554a (InternalUI) ⠀ <a class="download-btn" href="https://drive.google.com/file/d/1TUgkD5X1KQfHhX8LDYjj85BwNSSCYYKc/view">Download</a></li>
+            <li>9A2306f (InternalUI) ⠀ <a class="download-btn" href="https://drive.google.com/file/d/18FKQwf05myuiOZT1ycy0zdzS8pzUAxZH/view">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_4.png" alt="iPhone 4">
+    </div>
+</div>
+
+<div class="device-card-iphone4s">
+    <div class="card-content">
+        <h2>iPhone 4S</h2>
+			<p><strong>BoardConfig:</strong> N94AP</p>
+            <p><strong>Processor:</strong> S5L8940</p>
+        <ul>
+            <li>9A2264r (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/Z8ISjZrD#3VxgZ7ufm596Gnlram8nUuJTCf1N421664QuqhEFZlg">Download</a></li>
+            <li>9A2306f (InternalUI) ⠀ <a class="download-btn" href="https://mega.nz/file/osBzjLBR#XtL_ZNq7Zj03v3vqz0XRZEU25eyvaHiWlYi8hDM-1WM">Download</a></li>
+            <li>10A23941a (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/09p1AKZS#T4UtkODRa8EPD2YVzemZOBp5SaLmLLnUVyUD2UROgvA">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_4s.png" alt="iPhone 4S">
+    </div>
+</div>
+
+<div class="device-card-iphone5">
+    <div class="card-content">
+        <h2>iPhone 5</h2>
+			<p><strong>BoardConfig:</strong> N41AP</p>
+            <p><strong>Processor:</strong> S5L8950</p>
+        <ul>
+            <li>10A23110z (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/E1xF3ZyK#u6bOeJsMwMybg8cxaa4Ca6Gz-1hPYP9UD2Ern9UFNrg">Download</a></li>
+            <li>10A316 (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/0pBWmATT#hp4RPSo-Fjf6iAJfnrhmUCocrOwiMLT5GEDpe7t1ubw">Download</a></li>
+            <li>11A465 (InternalUI) ⠀ <a class="download-btn" href="https://mega.nz/file/s5oxnaAQ#AulBoUHJc5ILoCHNu2xdAD0B_7WJLwTtWSf5XEEyTmA">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_5.png" alt="iPhone 5">
+    </div>
+</div>
+
+<div class="device-card-iphone5c">
+    <div class="card-content">
+        <h2>iPhone 5c</h2>
+			<p><strong>BoardConfig:</strong> N48AP</p>
+            <p><strong>Processor:</strong> S5L8950</p>
+        <ul>
+            <li>11A63840h (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/O8ZFUZgS#MqGC3wZDpCChfD1fxegEnRyb5yItXn1gpxFQBcDGEUo">Download</a></li>
+            <li>11A93840l (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/q94RRK5Z#wg65pIXk3bvUHvzXTUdpD6xxMTHnB3iUH2IHRV9RU6E">Download</a></li>
+            <li>11A93840j (NonUI) ⠀ <a class="download-btn" href="https://applintrnl.app/dumps/iOS/7.0_11A93840j_NonUI_N48AP_Unknown/">Download</a></li>
+            <li>11D31620l (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/20YSHTgR#0TTek-1ZcLyep3GBLIKqXt6lVKPBr8ZMCdJAG1O6UlA">Download</a></li>
+            <li>11D31620u (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/2wInxKLA#GNWnwHKna9SJPmQIwivQ1GJTjy1Cwi2Q_ScwyR-sY9M">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_5c.png" alt="iPhone 5c">
+    </div>
+</div>
+
+<div class="device-card-iphone5s">
+    <div class="card-content">
+        <h2>iPhone 5s</h2>
+			<p><strong>BoardConfig:</strong> N51AP</p>
+            <p><strong>Processor:</strong> S5L8960</p>
+        <ul>
+            <li>11A24580o (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/WpBEzZZD#NMWnla3eSND_ozQaw7o-3VjAYuoKOEtZXUbyQIrfo3g">Download</a></li>
+            <li>11A24581c (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/G0x1SZyZ#_XcrKfjycI9gpudFzvfXMj6IYmtKh9sfaowscgTQuSY">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_5s.png" alt="iPhone 5s">
+    </div>
+</div>
+
+<div class="device-card-iphone6">
+    <div class="card-content">
+        <h2>iPhone 6</h2>
+		    <p><strong>BoardConfig:</strong> N61AP</p>
+            <p><strong>Processor:</strong> T7000</p>
+        <ul>
+            <li>12A93311h (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/HxAmELyb#UU-d5trHFs1bEGNBBcdatrib_Pdys4UH7JGs76SMf_Y">Download</a></li>
+            <li>12A93650o (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/L4hCDRzS#d6u2JxUykkv6MUtvwrodmoGAuiUiC33tcLSs1lgW_gM">Download</a></li>
+            <li>12A93651a (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/P1hgHTSb#adiiI_JkL8UWsfmOVHY0i8VqBUvNGWPAZHbd2ntIwRY">Download</a></li>
+            <li>15E216 (NonUI) ⠀ <a class="download-btn" href="https://applintrnl.app/dumps/iOS/11.3_15E216_InternalUI_N71AP_MP/iPhone8%2C1-carrierOS_11_2_15E216-Dump_from_StellaFudge.zip">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_6.png" alt="iPhone 6">
+    </div>
+</div>
+
+<div class="device-card-iphone6s">
+    <div class="card-content">
+        <h2>iPhone 6s</h2>
+		    <p><strong>BoardConfig:</strong> N71AP</p>
+            <p><strong>Processor:</strong> S8000</p>
+        <ul>
+            <li>13A93051l (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/WlZWQDYJ#-XGZjOBqoM7E_IoVqjWLYWRf0eVH3dg4s-pK4QsaTf4">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_6s.png" alt="iPhone 6s">
+    </div>
+</div>
+
+<div class="device-card-iphone6sp
+">
+    <div class="card-content">
+        <h2>iPhone 6s Plus</h2>
+		    <p><strong>BoardConfig:</strong> N66AP</p>
+            <p><strong>Processor:</strong> S8000</p>
+        <ul>
+            <li>15C50 (InternalUI) ⠀ <a class="download-btn" href="https://web.archive.org/web/20230602172702/https://iarchive.app/Download/15C50.zpaq">Download</a></li>
+			<li>13Z7316 (InternalUI) ⠀ <a class="download-btn" href="https://drive.google.com/file/d/1hscq-QJf3oINonIvu6HeK5OK-UKZoXCe/view">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_6s+.png" alt="iPhone 6s Plus">
+    </div>
+</div>
+
+<div class="device-card-iphone7">
+    <div class="card-content">
+        <h2>iPhone 7</h2>
+		    <p><strong>BoardConfig:</strong> D10AP</p>
+            <p><strong>Processor:</strong> T8010</p>
+        <ul>
+            <li>14A93012d (NonUI) ⠀ <a class="download-btn" href="https://applintrnl.app/dumps/iOS/10.0_14A93012d_NonUI_D10AP_Unknown/14A93012d_rootfs.dmg">Download</a></li>
+            <li>14A93012r (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/D5Aw1LTD#nYNy_tE6KdNe1sO4HRD6YLxTKXxHHdNqIghgQWDyvx4">Download</a></li>
+            <li>14Z1062 (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/WkpEmBDD#ZYcukzUjx_Q97ln_EqquFJtRuzVhqtknnytzYcEh1n8">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_7.png" alt="iPhone 7">
+    </div>
+</div>
+
+<div class="device-card-iphone8">
+    <div class="card-content">
+        <h2>iPhone 8</h2>
+		    <p><strong>BoardConfig:</strong> D20AP</p>
+            <p><strong>Processor:</strong> T8015</p>
+        <ul>
+            <li>15A369 (InternalUI) ⠀ <a class="download-btn" href="https://applintrnl.app/dumps/iOS/11.0_15A369_Rel_D201AP_PRB/">Download</a></li>
+            <li>15A93720r (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/Wo4CVATa#xbrfZpg5MBBNzk6ye_55am-6F96FqZ4oekNYm2GMDgc">Download</a></li>
+            <li>15A93261h (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/u0xBRJpT#uIjySku6lftYzI6jddHuKDFK4q-RGeJkSEaaMNsdFP8">Download</a></li>
+            <li>17A508 (InternalUI) ⠀ <a class="download-btn" href="https://drive.usercontent.google.com/download?id=1Cl6P_4jprm9bQB3SBOeyMshfeLpsafr0&export=download&authuser=0">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_8.png" alt="iPhone 8">
+    </div>
+</div>
+
+<div class="device-card-iphone8p">
+    <div class="card-content">
+        <h2>iPhone 8 Plus</h2>
+		    <p><strong>BoardConfig:</strong> D21AP</p>
+            <p><strong>Processor:</strong> T8015</p>
+        <ul>
+            <li>15A23061c (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/eto2wZDa#BTU5WmYIKw__-Qf-O8vZYJerxxUMQqHAq1CbNQzseJw">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_8+.png" alt="iPhone 8 Plus">
+    </div>
+</div>
+
+<div class="device-card-iphonex">
+    <div class="card-content">
+        <h2>iPhone X</h2>
+		    <p><strong>BoardConfig:</strong> D22AP</p>
+            <p><strong>Processor:</strong> T8015</p>
+        <ul>
+            <li>15A783601y (NonUI) ⠀ <a class="download-btn" href="https://drive.usercontent.google.com/download?id=1wsC0WQS-sCCRcmSmTbcDdX_nAFxGisRQ&export=download&authuser=0">Download</a></li>
+            <li>16C49 (InternalUI) ⠀ <a class="download-btn" href="https://mega.nz/file/Cd0zVKCa#lut8QJ_cxXqyJ7W4Q7wXBO6K9breZG7ViZSyxT1W_wo">Download</a></li>
+            <li>17A512 (InternalUI) ⠀ <a class="download-btn" href="https://applintrnl.app/dumps/iOS/13.0_17A512_InternalUI_D22AP/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_x.png" alt="iPhone X">
+    </div>
+</div>
+
+<div class="device-card-iphonexr">
+    <div class="card-content">
+        <h2>iPhone XR</h2>
+		    <p><strong>BoardConfig:</strong> N841AP</p>
+            <p><strong>Processor:</strong> T8020</p>	
+        <ul>
+            <li>16A13580x (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/KoRyEQ6b#nDdfyDwwSASAFrkbzYChhDKFRK8LLc_ESr0ADm_ycFs">Download</a></li>
+            <li>16A13580z (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/vspEFbgY#CCeCY4iyR9LCyTYX_YDcgEcnU9K8_XvkxM91KSFyvS0">Download</a></li>
+            <li>16A13581a (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/S4BXhabb#LVS7OdMfCXsFv_bRu3tg2uZ6SMVHZfXSFzlFbjdRP9g">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_xr.png" alt="iPhone XR">
+    </div>
+</div>
+
+<div class="device-card-iphonexs">
+    <div class="card-content">
+        <h2>iPhone XS</h2>
+		    <p><strong>BoardConfig:</strong> D321AP</p>
+            <p><strong>Processor:</strong> T8020</p>	
+        <ul>
+            <li>16B92 (InternalUI) ⠀ <a class="download-btn" href="https://web.archive.org/web/20230602172702/https://iarchive.app/Download/16B92.zpaq">Download</a></li>
+            <li>19A188 (InternalUI) ⠀ <a class="download-btn" href="https://applintrnl.app/dumps/iOS/15.0_19A188_InternalUI_D331pAP_DVT/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_xs.png" alt="iPhone XS">
+    </div>
+</div>
+
+<div class="device-card-iphonexsm">
+    <div class="card-content">
+        <h2>iPhone XS Max</h2>
+		    <p><strong>BoardConfig:</strong> D331AP</p>
+            <p><strong>Processor:</strong> T8020</p>	
+        <ul>
+            <li>17B45a (InternalUI) ⠀ <a class="download-btn" href="https://mega.nz/file/rJlzWKLQ#Cn2z-DIamZXuehxskrY5yfemDP2qQIskXhE8BxBxoJU">Download</a></li>
+            <li>18A245z (InternalUI) ⠀ <a class="download-btn" href="https://applintrnl.app/dumps/iOS/14.0_18A245z_InternalUI_D331pAP_DVT/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_xs_max.png" alt="iPhone XS Max">
+    </div>
+</div>
+
+<div class="device-card-iphone11">
+    <div class="card-content">
+        <h2>iPhone 11</h2>
+		    <p><strong>BoardConfig:</strong> N104AP</p>
+            <p><strong>Processor:</strong> T8030</p>	
+        <ul>
+            <li>18A188 (InternalUI) ⠀ <a class="download-btn" href="https://web.archive.org/web/20230602172702/https://iarchive.app/Download/18A188.tar.gz">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_11.png" alt="iPhone 11">
+    </div>
+</div>
+
+<div class="device-card-iphone12m">
+    <div class="card-content">
+        <h2>iPhone 12 Mini</h2>
+		    <p><strong>BoardConfig:</strong> D52gAP</p>
+            <p><strong>Processor:</strong> T8101</p>	
+        <ul>
+            <li>18A33771c (NonUI) ⠀ <a class="download-btn" href="https://mega.nz/file/KjoxmRZC#N6X9DZs9mpSbwCmbackground4aB1Gihvlzx1mVsFydHoKT_Z7c">Download</a></li>
+            <li>18A93560w (NonUI) ⠀ <a class="download-btn" href="https://applintrnl.app/dumps/iOS/14.1_18A93560w_NonUI_D52gAP_DVT/">Download</a></li>
+            <li>18A8359a (InternalUI)  ⠀<a class="download-btn" href="https://mega.nz/file/DUtj2aTS#ctjK2BA_uGEMDqmhyyUJLbDlsllQxAx0lR_X6sSsEj0">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_12.png" alt="iPhone 12 Mini">
+    </div>
+</div>
+
+<div class="device-card-iphone12">
+    <div class="card-content">
+        <h2>iPhone 12</h2>
+		    <p><strong>BoardConfig:</strong> D53gAP</p>
+            <p><strong>Processor:</strong> T8101</p>	
+        <ul>
+            <li>18A8359a (NonUI) ⠀ <a class="download-btn" href="https://applintrnl.app/dumps/iOS/14.1_18A8359a_InternalUI_D53gAP_CRB/">Download</a></li>
+            <li>18A21860t (NonUI) ⠀ <a class="download-btn" href="https://archive.org/download/apple-iphone-12-azulnanshan-18a21860t.-iphone-factoryos-switchboard-internal-fil/iPhone13%2C2_14.0_18A21860t_2026-04-14_1807_APFS_Live.zip">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_12.png" alt="iPhone 12">
+    </div>
+</div>
+
+<div class="device-card-iphone12p">
+    <div class="card-content">
+        <h2>iPhone 12 Pro</h2>
+		    <p><strong>BoardConfig:</strong> D53pAP</p>
+            <p><strong>Processor:</strong> T8101</p>	
+        <ul>
+            <li>18C57 (InternalUI) ⠀ <a class="download-btn" href="https://mega.nz/file/pMoyFC4K#kNkh0A15q9lYWjaTkzMBuvQzUqELDUCZh2iFk_Qa7d4">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_12.png" alt="iPhone 12 Pro">
+    </div>
+</div>
+
+<div class="device-card-iphone12pm">
+    <div class="card-content">
+        <h2>iPhone 12 Pro Max</h2>
+		    <p><strong>BoardConfig:</strong> D54pAP</p>
+            <p><strong>Processor:</strong> T8101</p>	
+        <ul>
+            <li>18A21860t (NonUI) ⠀ <a class="download-btn" href="https://applintrnl.app/dumps/iOS/14.0_18A23120o_NonUI_D54pAP_EVT/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_12.png" alt="iPhone 12 Pro Max">
+    </div>
+</div>
+
+<div class="device-card-iphone13p">
+    <div class="card-content">
+        <h2>iPhone 13 Pro</h2>
+		    <p><strong>BoardConfig:</strong> D63AP</p>
+            <p><strong>Processor:</strong> T8110</p>	
+        <ul>
+            <li>20A5312i (InternalUI) ⠀<a class="download-btn" href="https://mega.nz/file/hH9wTAxI#iU2m6a_91BfsTJveXpD1OVRqiDpzUzzRvwEt3HyWT0E">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_13_.png" alt="iPhone 13 Pro">
+    </div>
+</div>
+
+<div class="device-card-iphone14pm">
+    <div class="card-content">
+        <h2>iPhone 14 Pro Max</h2>
+		    <p><strong>BoardConfig:</strong> D74AP</p>
+            <p><strong>Processor:</strong> T8120</p>
+        <ul>
+            <li>21A360 (InternalUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/17.0.3_21A360_InternalUI_D74AP_PVTE/">Download</a></li>
+            <li>21B64 (InternalUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/17.1_21B64_InternalUI_D74AP_PVTE/">Download</a></li>
+            <li>21F90 (InternalUI) ⠀<a class="download-btn" href="http://applintrnl.app/dumps/iOS/17.5.1_21F90_InternalUI_D74AP_DVT/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_14_pro_max.png" alt="iPhone 14 Pro Max">
+    </div>
+</div>
+
+<div class="device-card-iphone14plus">
+    <div class="card-content">
+        <h2>iPhone 14 Plus</h2>
+		    <p><strong>BoardConfig:</strong> D28AP</p>
+        <ul>
+            <li>20A23181k (InternalUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/16.0_20A23181k_NonUI_D28AP_DVT/">Download</a></li>
+            <li>20A23181m (InternalUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/16.0_20A23181m_NonUI_D28AP_PRB/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_14_pro_max.png" alt="iPhone 14 Plus">
+    </div>
+</div>
+
+<div class="device-card-iphone15p">
+    <div class="card-content">
+        <h2>iPhone 15 Plus</h2>
+        <p><strong>BoardConfig:</strong> D38AP</p>
+        <p><strong>Processor:</strong> Т8120</p>
+        <ul>
+            <li>21A70691t (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/17.0_21A70691t_NonUI_D38AP_PROTO1/">Download</a></li>
+            <li>21A71271t (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/17.0_21A71271t_NonUI_D38AP_PROTO2/">Download</a></li>
+            <li>21A61831m (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/17.0_21A61831m_NonUI_D38AP_EVT/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_15_plus.png" alt="iPhone 15 Plus">
+    </div>
+</div>
+
+<div class="device-card-iphone15pm">
+    <div class="card-content">
+        <h2>iPhone 15 Pro Max</h2>
+        <p><strong>BoardConfig:</strong> D84AP</p>
+        <p><strong>Processor:</strong> Т8120</p>
+        <ul>
+            <li>21A62380n (NonUI) ⠀<a class="download-btn" href="https://mega.nz/folder/3AUllbhR#hx4dpvsamnrv1Qx3cQ140Q">Download</a></li>
+            <li>22E252 (InternalUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/18.4.1_22E252_InternalUI_D84AP_DVT/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_15_plus.png" alt="iPhone 15 Pro Max">
+    </div>
+</div>
+
+<div class="device-card-iphone16">
+    <div class="card-content">
+        <h2>iPhone 16</h2>
+        <p><strong>BoardConfig:</strong> D47AP</p>
+        <p><strong>Processor:</strong> t8140</p>
+        <ul>
+            <li>22A92871y (NonUI) ⠀<a class="download-btn" href="https://mega.nz/folder/dFAFTagB#br7OZiFnfNNookeV9jCu_Q">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iphone_16.png" alt="iPhone 16">
+    </div>
+</div>
+
+<div class="device-card-ipad2">
+    <div class="card-content">
+        <h2>iPad 1</h2>
+        <p><strong>BoardConfig:</strong> K48AP</p>
+        <p><strong>Processor:</strong> S5L8930X</p>
+        <ul>
+            <li> 7B3367h (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/3.2_7B3367h_NonUI_K48AP_RAMP/">Download</a></li>
+			<li> 7B3404i (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/3.2.1_7B3404i_NonUI_K48AP_PVTMINI/">Download</a></li>
+			<li> 7B3404d (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/3.2.1_7B3404d_NonUI_K48AP_MP/WildYabuli7B3403d.NonUIOS.dmg">Download</a></li>
+            <li> 7B3367с (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/3.2_7B3367c_NonUI_K48AP_MP/">Download</a></li>
+			<li> 7B35311f (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/3.2_7B5311f_NonUI_K48AP_PVT/">Download</a></li>
+			<li> 7B3356d (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/3.2_7B3356d_NonUI_K48AP_MP/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipad1.png" alt="iPad 2">
+    </div>
+</div>
+
+<div class="device-card-ipad2">
+    <div class="card-content">
+        <h2>iPad 2</h2>
+        <p><strong>BoardConfig:</strong> K93AP</p>
+        <p><strong>Processor:</strong> S5L8940</p>
+        <ul>
+            <li> 8F3191d (NonUI) ⠀<a class="download-btn" href="https://mega.nz/file/HppCAR6D#8uOVtmJ4p9i0YUsliuCIjssWHpnYxs-YGRR2yJBpnA4">Download</a></li>
+            <li> 8F3184a (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/4.3_8F3184a_NonUI_K9xAP_DVT_MCQ/DurangoYabuli8F3184a.K93K94K95FactoryOS.dmg">Download</a></li>
+			<li> 8F3149c (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/4.3_8F3149c_NonUI_K9xAP_DVT_MCQ/8F3149c.dmg">Download</a></li>
+            <li> 8F3191a (NonUI) ⠀<a class="download-btn" href="https://archive.org/download/durango-yabuli-8-f-3191a.-k-93-k-94-k-95-factory-os/DurangoYabuli8F3191a.K93K94K95FactoryOS.dmg">Download</a></li>
+			<li> 8F3149d (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/4.3_8F3149d_NonUI_K95AP/">Download</a></li>
+            <li> 8F3181b (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/4.3_8F3181b_NonUI_K9xAP_DVT_MCQ/8F3181b.dmg">Download</a></li>
+			<li> 8F3191g (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/4.3_8F3191g_NonUI_K9xAP_DVT_MCQ/DurangoYabuli8F3191g.K93K94K95FactoryOS.dmg">Download</a></li>
+            <li> 8H3007a (NonUI) ⠀<a class="download-btn" href="https://archive.org/download/durango-yabuli-8-h-3007a.-k-93-k-94-k-95-factory-os/DurangoYabuli8H3007a.K93K94K95FactoryOS.dmg">Download</a></li>
+            <li> 9B3176a (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/5.1_9B3176a_NonUI_K93AP/">Download</a></li>
+			<li> 11B554a (InternalUI) ⠀<a class="download-btn" href="https://mega.nz/file/OgJClZAK#jpz_F-7rJQ6nIjv4kCQ-6_jiiH0b9yAkgYUdhEv2nw0">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipad2.png" alt="iPad 2">
+    </div>
+</div>
+
+<div class="device-card-ipadmini1">
+    <div class="card-content">
+        <h2>iPad Mini 1</h2>
+        <p><strong>BoardConfig:</strong> P105AP</p>
+        <p><strong>Processor:</strong> S5L8942</p>
+        <ul>
+            <li> 10A63971b (NonUI) ⠀<a class="download-btn" href="https://mega.nz/file/S0ZgVaRD#58kUIm4bs4fWE4z-oegNhyzpHFaTJCaabAFoKvACRf4">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipadmini1.png" alt="iPad Mini 1">
+    </div>
+</div>
+
+<div class="device-card-ipad3">
+    <div class="card-content">
+        <h2>iPad 3</h2>
+        <p><strong>BoardConfig:</strong> J2AP, J2aAP, J1AP</p>
+        <p><strong>Processor:</strong> S5L8945</p>
+        <ul>
+            <li> 9B3077k (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/5.1_9B3077k_NonUI_J1AP_DVT/">Download</a></li>
+            <li> 9B3176p (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/5.1_9B3176p_NonUI_J1AP_DVT/">Download</a></li>
+            <li> 9B3110u (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/5.1_9B3110u_NonUI_J2AP_DVT/">Download</a></li>
+            <li> 9B3176a (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/5.1_9B3176a_NonUI_J2AP_MP/5.1_9B3176a_NonUI_J2AP_MP.tar.xz">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipad3.png" alt="iPad3">
+    </div>
+</div>
+
+<div class="device-card-ipad5">
+    <div class="card-content">
+        <h2>iPad 5</h2>
+        <p><strong>BoardConfig:</strong> J71sAP</p>
+        <p><strong>Processor:</strong> S8000</p>
+        <ul>
+            <li> 14E61810k (NonUI) ⠀<a class="download-btn" href="https://mega.nz/file/rl4AiKZQ#xd1t17l738fqEZ1_57PYm-SfG1HshOQuPe4DiP34iu4">Download</a></li>
+            <li> 14E61390h (NonUI) ⠀<a class="download-btn" href="https://archive.org/download/apple-ipad-5-erietianshan-14e61390h.-ipad-factoryos-switchboard-internal-filesys/iPad6%2C11_10.3_14E61390h_2026-04-13_1815_APFS_Live.zip">Download</a></li>
+            <li> 14E61810d (NonUI) ⠀<a class="download-btn" href="https://archive.org/download/apple-ipad-5-erietianshan-14e61810d.-ipad-factoryos-switchboard-internal-filesys/iPad6%2C11_10.3_14E61810d_2026-04-14_1423_APFS_Live.zip">Download</a></li>
+            <li> 14F60900l (NonUI) ⠀<a class="download-btn" href="https://mega.nz/file/m0IQWCRL#Y1-ujB1gi43eiDSGdHaIExA4dc0G7chWbbQYp7S5jS8">Download</a></li>
+            <li> 14F60900i (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/10.3.2_14F60900i_NonUI_J72sAP_MP/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipad5.png" alt="iPad 5">
+    </div>
+</div>
+
+<div class="device-card-ipadair2">
+    <div class="card-content">
+        <h2>iPad Air 2</h2>
+        <p><strong>BoardConfig:</strong> J81AP, J82AP</p>
+        <p><strong>Processor:</strong> T7001</p>
+        <ul>
+            <li> 18C50 (InternalUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/12.1.1_16C50_InternalUI_J82AP_DVT/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipadair2.png" alt="iPad Air 2">
+    </div>
+</div>
+
+<div class="device-card-ipadair2">
+    <div class="card-content">
+        <h2>iPad Air 4</h2>
+        <p><strong>BoardConfig:</strong> J308AP, J307AP</p>
+        <p><strong>Processor:</strong> T8101</p>
+        <ul>
+            <li> 18A13410u (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/14.0_18A13410u_NonUI_J307AP_FRB/">Download</a></li>
+            <li> 18A13412e (NonUI) ⠀<a class="download-btn" href="https://mega.nz/folder/fEcAnIgK#UDB_7ElqZf9cTjmIDv0Yqw">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipadair4.png" alt="iPad Air 4">
+    </div>
+</div>
+
+<div class="device-card-ipad6">
+    <div class="card-content">
+        <h2>iPad 6</h2>
+        <p><strong>BoardConfig:</strong> J71bAP</p>
+        <p><strong>Processor:</strong> T8010</p>
+        <ul>
+            <li> 15E61120i (NonUI) ⠀<a class="download-btn" href="https://mega.nz/file/21hU2C7K#nnJgOz2KsApSXhFlmHZqZjRlVOqM9YQln3La57x0Tqg">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipad6.png" alt="iPad 6">
+    </div>
+</div>
+
+<div class="device-card-ipadpro1">
+    <div class="card-content">
+        <h2>iPad Pro 11 (1 Gen)</h2>
+        <p><strong>BoardConfig:</strong> J317AP</p>
+        <p><strong>Processor:</strong> T8027</p>
+        <ul>
+            <li> 16A63060n (NonUI) ⠀<a class="download-btn" href="https://mega.nz/file/hDVESQBR#zd6hNYXRDjWcVN-rshwR7SPwkkQmq8Q5wVfStOeU7zs">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipadpro1.png" alt="iPad Pro 1">
+    </div>
+</div>
+
+<div class="device-card-ipadpro2">
+    <div class="card-content">
+        <h2>iPad Pro 11 (2 Gen)</h2>
+        <p><strong>BoardConfig:</strong> J417AP, J418AP</p>
+        <p><strong>Processor:</strong> T8027</p>
+        <ul>
+            <li> 17G68 (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/13.6_17G68_NonUI_J417AP_PRQ/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipadpro2.png" alt="iPad Pro 2">
+    </div>
+</div>
+
+<div class="device-card-ipadpro3">
+    <div class="card-content">
+        <h2>iPad Pro 11 (3 Gen)</h2>
+        <p><strong>BoardConfig:</strong> J517AP, J517xAP, J518AP, J518xAP</p>
+        <p><strong>Processor:</strong> M1</p>
+        <ul>
+            <li> 18E61070r (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/14.5_18E61070r_NonUI_J517AP_AFB/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipadpro3.png" alt="iPad Pro 3">
+    </div>
+</div>
+
+<div class="device-card-ipadmini6">
+    <div class="card-content">
+        <h2>iPad Mini 6</h2>
+        <p><strong>BoardConfig:</strong> J310AP, J311AP</p>
+        <p><strong>Processor:</strong> T8110</p>
+        <ul>
+            <li> 20A5348a (InternalUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/16.0_20A5348a_InternalUI_J310AP_DVT/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipadmini6.png" alt="iPad Mini 6">
+    </div>
+</div>
+
+<div class="device-card-ipadunreleased">
+    <div class="card-content">
+        <h2>iPad Unreleased (5,5_5,6)</h2>
+        <p><strong>BoardConfig:</strong> J98AP</p>
+        <p><strong>Processor:</strong> T7001</p>
+        <ul>
+            <li> 12E21251a (NonUI) ⠀<a class="download-btn" href="https://mega.nz/file/kOdTEQBB#Xe9opgQ7nRoWtCbPGDVIwhAsYDyM3skv7ZGKhe5rvIE">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipadunreleased.png" alt="iPad Unreleased">
+    </div>
+</div>
+
+<div class="device-card-ipadprom1">
+    <div class="card-content">
+        <h2>iPad Pro (M1)</h2>
+        <p><strong>BoardConfig:</strong> J517AP</p>
+        <p><strong>Processor:</strong> M1</p>
+        <ul>
+            <li> 18E61070l (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/14.5_18E61070l_NonUI_J517AP_AFB/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipadprom1.png" alt="iPad Pro M1">
+    </div>
+</div>
+
+<div class="device-card-ipadairm2">
+    <div class="card-content">
+        <h2>iPad Air (M2)</h2>
+        <p><strong>BoardConfig:</strong> J508AP, J507AP</p>
+        <p><strong>Processor:</strong> M2</p>
+        <ul>
+            <li> 21E11251j (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/17.4_21E11251j_NonUI_J508AP_PVT/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iPad/ipadairm2.png" alt="iPad Air M2">
+    </div>
+</div>
+
+<div class="device-card-ipodtouch2">
+    <div class="card-content">
+        <h2>iPod Touch 2</h2>
+        <p><strong>BoardConfig:</strong> N72AP</p>
+        <p><strong>Processor:</strong> S5L8720</p>
+        <ul>
+            <li> 7C101 (NonUI) </li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iPodTouch2.png" alt="iPod Touch 2">
+    </div>	
+</div>
+
+<div class="device-card-ipodtouch4">
+    <div class="card-content">
+        <h2>iPod Touch 4</h2>
+        <p><strong>BoardConfig:</strong> N81AP</p>
+        <p><strong>Processor:</strong> S5L8930</p>
+        <ul>
+            <li> 8B117 (InternalUI) ⠀<a class="download-btn" href="https://mega.nz/file/a8gS1AaL#WzqEypYV2yHYLD7QGU4om-R6YoJtdkwf_GjYESpdzq4">Download</a></li>
+            <li> 10A13910b (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/6.0_10A13910b_NonUI_N81AP_PVT/SundanceJade10A13910b.iPodtouchFactoryOS.dmg">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iPodTouch4.png" alt="iPod Touch 4">
+    </div>	
+</div>
+
+<div class="device-card-ipodtouch5">
+    <div class="card-content">
+        <h2>iPod Touch 5</h2>
+        <p><strong>BoardConfig:</strong> N78AP, N78aAP</p>
+        <p><strong>Processor:</strong> S5L8942</p>
+        <ul>
+            <li> 10A219 (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iOS/6.0_10A219_NonUI_N78AP_PROTO1/Sundance10A219.iPodtouchFactoryOS.dmg.gz">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iPodTouch5.png" alt="iPod Touch 5">
+    </div>	
+</div>
+
+<div class="device-card-ipodtouch6">
+    <div class="card-content">
+        <h2>iPod Touch 6</h2>
+        <p><strong>BoardConfig:</strong> N102AP</p>
+        <p><strong>Processor:</strong> T7000</p>
+        <ul>
+            <li> 12H10570d (NonUI) ⠀<a class="download-btn" href="https://mega.nz/file/GxRWhL4J#FpxXV3aEFfh_A2Bs9N6UjvUwizo9ltfH1EAtH_S9TWU">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iPodTouch6.png" alt="iPod Touch 6">
+    </div>	
+</div>
+
+<div class="device-card-ipodtouch6">
+    <div class="card-content">
+        <h2>iPod Touch 7</h2>
+        <p><strong>BoardConfig:</strong> N112AP</p>
+        <p><strong>Processor:</strong> T7010</p>
+        <ul>
+            <li> 16F41260r (NonUI) ⠀<a class="download-btn" href="https://drive.google.com/file/d/1eT0WaAV01O29_dvqopcO3Cb73HtlA08P/view">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/iPodTouch6.png" alt="iPod Touch 6">
+    </div>	
+</div>
+
+<div class="device-card-Watch1">
+    <div class="card-content">
+        <h2>Apple Watch (1 gen) </h2>
+        <p><strong>BoardConfig:</strong> N27aAP</p>
+        <p><strong>Processor:</strong> S7002</p>
+        <ul>
+            <li> 12s34501f (NonUI) ⠀<a class="download-btn" href="https://mega.nz/file/atQDyZCC#_5fh2tzfQ8s8xT-N6P_lkWcQdN-try_5H2KAriBmTrA">Download</a></li>
+			<li> 13S709 (Demo, 38 mm) ⠀<a class="download-btn" href="https://drive.google.com/file/d/1IdvwYzQhPmiDWJrOvakzY0eQWIf8FVKi/view?usp=drive_link">Download</a></li>
+			<li> UNK (Demo, 42 mm) ⠀<a class="download-btn" href="https://drive.google.com/file/d/1y4I9L4C34O9Wxm3jTVtp5eVkapjVAkzi/view?usp=drive_link">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/Watch11.png" alt="Watch">
+    </div>	
+</div>
+
+<div class="device-card-series-watch1">
+    <div class="card-content">
+        <h2>Apple Watch Series 1 </h2>
+        <p><strong>BoardConfig:</strong> N27dAP</p>
+        <p><strong>Processor:</strong> T8002</p>
+        <ul>
+            <li> 14S32871w (NonUI) ⠀<a class="download-btn" href="https://drive.usercontent.google.com/download?id=1cIMSivWVoZJVdQYRW_qE_Lj_phK76q0w&export=download">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/Watch11.png" alt="Watch">
+    </div>	
+</div>
+
+<div class="device-card-series-watchultra2">
+    <div class="card-content">
+        <h2>Apple Watch Ultra 2 </h2>
+        <p><strong>BoardConfig:</strong> N210AP</p>
+        <p><strong>Processor:</strong> T8310</p>
+        <ul>
+            <li> 21R41680z (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/watchOS/10.0_21R41680z_NonUI_N210AP/">Download</a></li>
+            <li> 22R349 (InternalUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/watchOS/11.0_22R349_InternalUI_N210AP/">Download</a></li>
+
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/Watchultra2.png" alt="Watch">
+    </div>	
+</div>
+
+<div class="device-card-horizon">
+    <div class="card-content">
+        <h2>Horizon</h2>
+        <ul>
+            <li> EmetSkyline 15H2217d ⠀<a class="download-btn" href="https://mega.nz/file/WkBVmRBK#z9EoT1maKpLTfZOJIVsA_Ih1b50qvrF-fF3avvbQt3w">Download</a></li>
+            <li> PeaceSkyline 16S4366t ⠀<a class="download-btn" href="https://mega.nz/file/Tc0zAATD#NZ3NatsbHzE85U-9CNworGjFn0D0ZSw021Ih5-our-s">Download</a></li>			
+            <li> YukonEHWSkyline 17S42550e ⠀<a class="download-btn" href="https://mega.nz/file/bhYyCYzB#X7yCaY1ItWdrpObfA94KK4Gt2VAmxkRN7lQgef0zwzA">Download</a></li>						
+            <li> AzulSkyline 18S43370i ⠀<a class="download-btn" href="https://mega.nz/file/q5hTSIRC#4UiygGK8lJQLYSEFWmjdNDvZaJHSfCUiQqBulnTe9T4">Download</a></li>		
+	        <li> SkySkylineTwo 19S64040f⠀<a class="download-btn" href="https://drive.google.com/file/d/1TlFdjAIRiLQsdEP8jIxgvqrSKQXfwLUw/view?usp=drive_link">Download</a></li>
+            <li> SydneySkyline 20S63580d ⠀<a class="download-btn" href="https://mega.nz/file/k8JBnBDR#wNnQm8qe6DQKMsrMfvO6nZzYh-Uz0ywP6kc9jKtBq6U">Download</a></li>
+            <li> SydneySkyline 20S63580j </li>
+            <li> SydneySkyline 20S63580k </li>
+            <li> DawnSkyline 21S63260c </li>
+            <li> DawnSkyline 21S63260j </li>
+            <li> CrystalSkyline 22S63470d </li>
+            <li> LuckSkyline 23S63281c </li>
+        </ul>
+    </div>
+</div>
+
+<div class="device-card-macossierra">
+    <div class="card-content">
+        <h2>MacOS Sierra</h2>
+        <ul>
+            <li> 16F5049F (InternalUI) ⠀<a class="download-btn" href="https://archive.org/download/PhoenixCE_a1708_16F5049f/Phoenix%20A1708.dmg">Download</a></li>
+            <li> 16E195 (TSBI) ⠀<a class="download-btn" href="https://applintrnl.app/bundles/macOS/Sierra_10.12.4_16E195_TSBI_v5.dmg">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/MacOS.png" alt="MacOS">
+    </div>	
+</div>
+
+<div class="device-card-macossierra">
+    <div class="card-content">
+        <h2>MacOS High Sierra</h2>
+        <ul>
+            <li> 17G2091 (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/macOS/10.13.6_17G2091_FactoryOS_MacPro6%2C1_Unknown-RemovedOSImages.dmg">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/MacOS.png" alt="MacOS">
+    </div>	
+</div>
+
+<div class="device-card-macosmojave">
+    <div class="card-content">
+        <h2>MacOS Mojave</h2>
+        <ul>
+            <li> 18E41560o (InternalUI) ⠀<a class="download-btn" href="https://applintrnl.app/bundles/macOS/J139_13_15_JazzF_v14_10.14.4_18E41560o_PhoenixCE.dmg">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/MacOS.png" alt="MacOS">
+    </div>	
+</div>
+
+
+<div class="device-card-macosbigsur">
+    <div class="card-content">
+        <h2>MacOS Big Sur DTK</h2>
+        <ul>
+            <li> 20A2261g (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/macOS/11.0_20A2261g_NonUI_J273a_PVT/20A2261g.tar.gz">Download</a></li>
+            <li> 20A2314a (InternalUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/macOS/11.0_20A2314a_InternalUI_J273_EVT/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/MacOS.png" alt="MacOS">
+    </div>	
+</div>
+
+<div class="device-card-macosventura">
+    <div class="card-content">
+        <h2>MacOS Ventura MacBook M2 15in</h2>
+        <ul>
+            <li> 22E11181e (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/macOS/13.3_22E11181e_NonUI_J415_EVT/">Download</a></li>
+            <li> 22E11940i (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/macOS/13.3_22E11940i_NonUI_J415_DVT/M2_Air_13.3_22E11940i_Root.tar.gz">Download</a></li>
+            <li> 22E11940k (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/macOS/13.3_22E11940k_NonUI_J415_DVT/">Download</a></li>
+            <li> 22A33260o (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/macOS/13.0_22A33260o_NonUI_J414s_EVT/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/MacOS.png" alt="MacOS">
+    </div>	
+</div>
+
+<div class="device-card-macossonoma">
+    <div class="card-content">
+        <h2>MacOS Sonoma MacBook Pro 16in and 14in</h2>
+        <ul>
+            <li> 23A31761h (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/macOS/M3_Max_16in_Proto/M3_Max_14.0_23A3176h_Root.tar.gz">Download</a></li>
+            <li> 23A32391j (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/macOS/14.0_23A32391j_NonUI_J514c_EVT/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/MacOS.png" alt="MacOS">
+    </div>	
+</div>
+
+<div class="device-card-T2">
+    <div class="card-content">
+        <h2>T1</h2>
+        <p><strong>BoardConfig:</strong> UNK</p>
+        <p><strong>Processor:</strong> UNK</p>
+        <ul>
+            <li> T1 (Factory Bundle) ⠀<a class="download-btn" href="https://applintrnl.app/dumps/iBridge1_1Factory.bundle.zip">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/t1.jpg" alt="t1">
+    </div>	
+</div>
+
+<div class="device-card-T2">
+    <div class="card-content">
+        <h2>T2</h2>
+        <p><strong>BoardConfig:</strong> J140kAP</p>
+        <p><strong>Processor:</strong> T8012</p>
+        <ul>
+            <li> 16P25070u (NonUI) ⠀<a class="download-btn" href="https://mega.nz/file/foQixR4K#dAG7W3lqcnwvgPa4SYmnL-jTickoBVpwHdNlBIvyDU4">Download</a></li>
+            <li> T2 PCIe-card ⠀<a class="download-btn" href="https://applintrnl.app/dumps/T2-PCIe-card/">Download</a></li>
+        </ul>
+    </div>
+    <div class="device-image">
+        <img src="../Assets/iphone/T2.jpg" alt="T2">
+    </div>	
+</div>
+
+<div class="device-card-other">
+    <div class="card-content">
+        <h2>Other</h2>
+        <ul>
+            <li> 1A420 (NonUI) tar.bz2 ⠀<a class="download-btn" href="https://mega.nz/file/zA1kQBrD#8R1W4CIOs0b2KGVfCYFKpijXRZJzCkeVowsSJpdy4n4">Download</a></li>
+            <li>  iPad Mini 2 11D167 (OQC) ⠀<a class="download-btn" href="https://mega.nz/file/XFUlEQYS#PyZzX_Jetv6lT5GuLKCaJe66wot1Z0ERJSmW_32mZvA">Download</a></li>
+            <li>  iPad Mini 2 (12D508d) (Apple Watch demo f5 iOS 8.2) ⠀<a class="download-btn" href="https://mega.nz/file/e45HzYBL#dlFLq8Cwx4z6I0ddDeqqmnqnEAm2ZrIqmvOpg1-MqNM">Download</a></li>
+            <li>  iPad Mini 2 (13A404) (Apple Watch demo f5 iOS 9.0.1) ⠀<a class="download-btn" href="https://mega.nz/file/zx5jGJgT#rKQzFRRh3S-l2Vlhmcb6raI3rSqP0Ur2V4HMt_xRx8Y">Download</a></li>
+            <li>  iPad Mini 2 (13F69) (Apple Watch demo f5 iOS 9.3.2) ⠀<a class="download-btn" href="https://mega.nz/file/atAyjJQY#wD4Ase0r5W9kFLWp6LtiHBAFcxR5rXbSv-pgTQUe6z0">Download</a></li>
+			<li>  iPhone 4 (Phoenix FullInternal) ⠀<a class="download-btn" href="https://applintrnl.app/bundles/iOS/iPhone4_4.0-4.2.5_PhoenixBundles_FullInternal/">Download</a></li>
+			<li>  Full internal build (7D11) ⠀<a class="download-btn" href="https://drive.google.com/file/d/1-U-n1UV8aJfECxgIZgusfJpfIuHvp5ti/view?usp=sharing">Download</a></li>
+			<li>  HomePod 1 (15D40260u) (NonUI) ⠀<a class="download-btn" href="https://nicsfix.com/ipsw/ProtoPod.zip">Download</a></li>
+			<li>  BrigdeOS (15P665380m) (NonUI) ⠀<a class="download-btn" href="https://applintrnl.app/bundles/bridgeOS/BridgeOS_2.4_15P665380m_NonUI_J132_Restore/FDbridgeOSLoboCobra15P665380m_J132.zip">Download</a></li>
+        </ul>
+    </div>	
+</div>
+	
+</div>
+	
+</body>
+</html>
